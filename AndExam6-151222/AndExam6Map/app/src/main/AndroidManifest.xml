@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="andexammap.ver6" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/andexam"
+        android:label="안드로이드 프로그래밍 정복"
+        android:theme="@style/android:Theme.Holo"
+        >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".AndExamMap"
+            android:label="@string/title_activity_and_exam_map" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        // 32장.맵 서비스
+        <activity android:name=".c32_map.GetProvider" android:label="GetProvider" />
+        <activity android:name=".c32_map.ReadLocation" android:label="ReadLocation"
+                  android:configChanges="orientation|keyboardHidden"
+            />
+        <activity android:name=".c32_map.LastKnown" android:label="LastKnown" />
+        <activity android:name=".c32_map.LocationConvert" android:label="LocationConvert" />
+        <activity android:name=".c32_map.LocationAlert" android:label="LocationAlert" />
+        <receiver android:name=".c32_map.FishingReceiver" />
+        <activity android:name=".c32_map.GeoCoding" android:label="GeoCoding" />
+        <activity android:name=".c32_map.ViewLocation" android:label="ViewLocation" />
+        <activity android:name=".c32_map.GoogleMapTest" android:label="GooglMapTest" />
+        <activity android:name=".c32_map.MyLocation" android:label="MyLocation" />
+        <activity android:name=".c32_map.MapType" android:label="MapType" />
+        <activity android:name=".c32_map.CameraMap" android:label="CameraMap" />
+        <activity android:name=".c32_map.MapUi" android:label="MapUi" />
+        <activity android:name=".c32_map.MapShape" android:label="MapShape" />
+    </application>
+
+</manifest>
