@@ -1,0 +1,214 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+{\f008 Courier New;}
+{\f009 Courier New;}
+{\f010 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f4522066\fs20\cb21\cf20 \highlight19\cf18 package\highlight1\cf0  \highlight17\cf16 jwei\highlight15\cf14\b .\highlight17\cf16\b0 apps\highlight15\cf14\b .\highlight17\cf16\b0 dataforandroid\highlight15\cf14\b .\highlight17\cf16\b0 ch3\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 java\highlight15\cf14\b .\highlight17\cf16\b0 util\highlight15\cf14\b .\highlight17\cf16\b0 HashMap\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 java\highlight15\cf14\b .\highlight17\cf16\b0 util\highlight15\cf14\b .\highlight17\cf16\b0 Map\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 java\highlight15\cf14\b .\highlight17\cf16\b0 util\highlight15\cf14\b .\highlight17\cf16\b0 Random\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 jwei\highlight15\cf14\b .\highlight17\cf16\b0 apps\highlight15\cf14\b .\highlight17\cf16\b0 dataforandroid\highlight15\cf14\b .\highlight17\cf16\b0 R\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 jwei\highlight15\cf14\b .\highlight17\cf16\b0 apps\highlight15\cf14\b .\highlight17\cf16\b0 dataforandroid\highlight15\cf14\b .\highlight17\cf16\b0 ch2\highlight15\cf14\b .\highlight17\cf16\b0 StudentTable\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 android\highlight15\cf14\b .\highlight17\cf16\b0 app\highlight15\cf14\b .\highlight17\cf16\b0 Activity\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 android\highlight15\cf14\b .\highlight17\cf16\b0 database\highlight15\cf14\b .\highlight17\cf16\b0 Cursor\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 android\highlight15\cf14\b .\highlight17\cf16\b0 database\highlight15\cf14\b .\highlight17\cf16\b0 sqlite\highlight15\cf14\b .\highlight17\cf16\b0 SQLiteDatabase\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 android\highlight15\cf14\b .\highlight17\cf16\b0 database\highlight15\cf14\b .\highlight17\cf16\b0 sqlite\highlight15\cf14\b .\highlight17\cf16\b0 SQLiteQueryBuilder\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight17\cf16 android\highlight15\cf14\b .\highlight17\cf16\b0 os\highlight15\cf14\b .\highlight17\cf16\b0 Bundle\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+\par
+\highlight19\cf18 public\highlight1\cf0  \highlight19\cf18 class\highlight1\cf0  \highlight17\cf16 PerformanceActivity\highlight1\cf0  \highlight9\cf8\b extends\highlight1\cf0\b0  \highlight17\cf16 Activity\highlight1\cf0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight19\cf18 private\highlight1\cf0  \highlight17\cf16 String\highlight15\cf14\b []\highlight1\cf0\b0  \highlight17\cf16 STATES\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 String\highlight15\cf14\b []\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0  \highlight11\cf10 "IL"\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight11\cf10 "CA"\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight11\cf10 "AR"\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight11\cf10 "NY"\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight11\cf10 "PA"\highlight1\cf0  \highlight15\cf14\b \};\highlight1\cf0\b0 \par
+\par
+    \highlight19\cf18 private\highlight1\cf0  \highlight19\cf18 char\highlight15\cf14\b []\highlight1\cf0\b0  \highlight17\cf16 ALPHA\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight19\cf18 char\highlight15\cf14\b []\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0  \highlight13\cf12 'a'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'b'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'c'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'd'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'e'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'f'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'g'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'h'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'i'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'j'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'k'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'l'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'm'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'n'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'o'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'p'\highlight15\cf14\b ,\highlight1\cf0\b0 \par
+            \highlight13\cf12 'q'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'r'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 's'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 't'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'u'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'v'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'w'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'x'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'y'\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight13\cf12 'z'\highlight1\cf0  \highlight15\cf14\b \};\highlight1\cf0\b0 \par
+\par
+    \highlight17\cf16 @Override\highlight1\cf0 \par
+    \highlight19\cf18 protected\highlight1\cf0  \highlight19\cf18 void\highlight1\cf0  \highlight17\cf16 onCreate\highlight15\cf14\b (\highlight17\cf16\b0 Bundle\highlight1\cf0  \highlight17\cf16 savedInstanceState\highlight15\cf14\b )\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+        \highlight9\cf8\b super\highlight15\cf14 .\highlight17\cf16\b0 onCreate\highlight15\cf14\b (\highlight17\cf16\b0 savedInstanceState\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 setContentView\highlight15\cf14\b (\highlight17\cf16\b0 R\highlight15\cf14\b .\highlight17\cf16\b0 layout\highlight15\cf14\b .\highlight17\cf16\b0 main\highlight15\cf14\b );\highlight1\cf0\b0 \par
+\par
+        \highlight17\cf16 TestSchemaHelper\highlight1\cf0  \highlight17\cf16 sch\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 TestSchemaHelper\highlight15\cf14\b (\highlight9\cf8 this\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight17\cf16 SQLiteDatabase\highlight1\cf0  \highlight17\cf16 sqdb\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 sch\highlight15\cf14\b .\highlight17\cf16\b0 getWritableDatabase\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight19\cf18 boolean\highlight1\cf0  \highlight17\cf16 shouldLoad\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight9\cf8\b false\highlight15\cf14 ;\highlight1\cf0\b0 \par
+        \highlight9\cf8\b if\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 shouldLoad\highlight15\cf14\b )\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 l\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 ALPHA\highlight15\cf14\b .\highlight17\cf16\b0 length\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 s\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 STATES\highlight15\cf14\b .\highlight17\cf16\b0 length\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+            \highlight17\cf16 Random\highlight1\cf0  \highlight17\cf16 r\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 Random\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+            \highlight9\cf8\b for\highlight1\cf0\b0  \highlight15\cf14\b (\highlight19\cf18\b0 int\highlight1\cf0  \highlight17\cf16 i\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight15\cf14\b ;\highlight1\cf0\b0  \highlight17\cf16 i\highlight1\cf0  \highlight15\cf14\b <\highlight1\cf0\b0  \highlight17\cf16 l\highlight15\cf14\b ;\highlight1\cf0\b0  \highlight17\cf16 i\highlight15\cf14\b ++)\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+                \highlight9\cf8\b for\highlight1\cf0\b0  \highlight15\cf14\b (\highlight19\cf18\b0 int\highlight1\cf0  \highlight17\cf16 j\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight15\cf14\b ;\highlight1\cf0\b0  \highlight17\cf16 j\highlight1\cf0  \highlight15\cf14\b <\highlight1\cf0\b0  \highlight17\cf16 l\highlight15\cf14\b ;\highlight1\cf0\b0  \highlight17\cf16 j\highlight15\cf14\b ++)\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+                    \highlight9\cf8\b for\highlight1\cf0\b0  \highlight15\cf14\b (\highlight19\cf18\b0 int\highlight1\cf0  \highlight17\cf16 k\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight15\cf14\b ;\highlight1\cf0\b0  \highlight17\cf16 k\highlight1\cf0  \highlight15\cf14\b <\highlight1\cf0\b0  \highlight17\cf16 l\highlight15\cf14\b ;\highlight1\cf0\b0  \highlight17\cf16 k\highlight15\cf14\b ++)\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+                        \highlight17\cf16 StringBuilder\highlight1\cf0  \highlight17\cf16 sb\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 StringBuilder\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+                        \highlight17\cf16 sb\highlight15\cf14\b .\highlight17\cf16\b0 append\highlight15\cf14\b (\highlight17\cf16\b0 ALPHA\highlight15\cf14\b [\highlight17\cf16\b0 i\highlight15\cf14\b ]);\highlight1\cf0\b0 \par
+                        \highlight17\cf16 sb\highlight15\cf14\b .\highlight17\cf16\b0 append\highlight15\cf14\b (\highlight17\cf16\b0 ALPHA\highlight15\cf14\b [\highlight17\cf16\b0 j\highlight15\cf14\b ]);\highlight1\cf0\b0 \par
+                        \highlight17\cf16 sb\highlight15\cf14\b .\highlight17\cf16\b0 append\highlight15\cf14\b (\highlight17\cf16\b0 ALPHA\highlight15\cf14\b [\highlight17\cf16\b0 k\highlight15\cf14\b ]);\highlight1\cf0\b0 \par
+                        \highlight17\cf16 String\highlight1\cf0  \highlight17\cf16 name\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 sb\highlight15\cf14\b .\highlight17\cf16\b0 toString\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+                        \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 ind\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 r\highlight15\cf14\b .\highlight17\cf16\b0 nextInt\highlight15\cf14\b (\highlight17\cf16\b0 s\highlight15\cf14\b );\highlight1\cf0\b0 \par
+                        \highlight17\cf16 String\highlight1\cf0  \highlight17\cf16 state\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 STATES\highlight15\cf14\b [\highlight17\cf16\b0 ind\highlight15\cf14\b ];\highlight1\cf0\b0 \par
+                        \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 income\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 r\highlight15\cf14\b .\highlight17\cf16\b0 nextInt\highlight15\cf14\b (\highlight7\cf6\b0 1000000\highlight15\cf14\b );\highlight1\cf0\b0 \par
+                        \highlight17\cf16 sch\highlight15\cf14\b .\highlight17\cf16\b0 addRow\highlight15\cf14\b (\highlight17\cf16\b0 name\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight17\cf16 state\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight17\cf16 income\highlight15\cf14\b );\highlight1\cf0\b0 \par
+                    \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+                \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+            \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+        \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 /*\par
+         * TEST PERFORMANCE HERE\par
+         */\highlight1\cf0 \par
+        \highlight5\cf4 // TEST WHERE FILTER PERFORMANCE //\par
+\highlight1\cf0 \par
+        \highlight5\cf4 // SQL OPTIMIZED\par
+\highlight1\cf0         \highlight19\cf18 long\highlight1\cf0  \highlight17\cf16 start\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 String\highlight1\cf0  \highlight17\cf16 query\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 SQLiteQueryBuilder\highlight15\cf14\b .\highlight17\cf16\b0 buildQueryString\highlight15\cf14\b (\highlight9\cf8 false\highlight15\cf14 ,\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 TABLE_NAME\highlight15\cf14\b ,\highlight1\cf0\b0 \par
+                \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 String\highlight15\cf14\b []\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 NAME\highlight1\cf0  \highlight15\cf14\b \},\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 INCOME\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 " > 500000"\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 Cursor\highlight1\cf0  \highlight17\cf16 c\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 sqdb\highlight15\cf14\b .\highlight17\cf16\b0 rawQuery\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 numRows\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+        \highlight9\cf8\b while\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 c\highlight15\cf14\b .\highlight17\cf16\b0 moveToNext\highlight15\cf14\b ())\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 colid\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getColumnIndex\highlight15\cf14\b (\highlight17\cf16\b0 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 NAME\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight17\cf16 String\highlight1\cf0  \highlight17\cf16 name\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getString\highlight15\cf14\b (\highlight17\cf16\b0 colid\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight17\cf16 numRows\highlight15\cf14\b ++;\highlight1\cf0\b0 \par
+        \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight11\cf10\b0 "RETRIEVED "\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 numRows\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b ((\highlight17\cf16\b0 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ()\highlight1\cf0\b0  \highlight15\cf14\b -\highlight1\cf0\b0  \highlight17\cf16 start\highlight15\cf14\b )\highlight1\cf0\b0  \highlight15\cf14\b /\highlight1\cf0\b0  \highlight7\cf6 1000000\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 " MILLISECONDS"\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 close\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4 // JAVA OPTIMIZED\par
+\highlight1\cf0         \highlight17\cf16 start\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 query\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 SQLiteQueryBuilder\highlight15\cf14\b .\highlight17\cf16\b0 buildQueryString\highlight15\cf14\b (\highlight9\cf8 false\highlight15\cf14 ,\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 TABLE_NAME\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 String\highlight15\cf14\b []\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 NAME\highlight15\cf14\b ,\highlight1\cf0\b0 \par
+                \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 INCOME\highlight1\cf0  \highlight15\cf14\b \},\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 sqdb\highlight15\cf14\b .\highlight17\cf16\b0 rawQuery\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight17\cf16 numRows\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+        \highlight9\cf8\b while\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 c\highlight15\cf14\b .\highlight17\cf16\b0 moveToNext\highlight15\cf14\b ())\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 colid\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getColumnIndex\highlight15\cf14\b (\highlight17\cf16\b0 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 NAME\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 colid2\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getColumnIndex\highlight15\cf14\b (\highlight17\cf16\b0 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 INCOME\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight17\cf16 String\highlight1\cf0  \highlight17\cf16 name\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getString\highlight15\cf14\b (\highlight17\cf16\b0 colid\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 income\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getInt\highlight15\cf14\b (\highlight17\cf16\b0 colid2\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight9\cf8\b if\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 income\highlight1\cf0  \highlight15\cf14\b >\highlight1\cf0\b0  \highlight7\cf6 500000\highlight15\cf14\b )\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+                \highlight17\cf16 numRows\highlight15\cf14\b ++;\highlight1\cf0\b0 \par
+            \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+        \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight11\cf10\b0 "RETRIEVED "\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 numRows\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b ((\highlight17\cf16\b0 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ()\highlight1\cf0\b0  \highlight15\cf14\b -\highlight1\cf0\b0  \highlight17\cf16 start\highlight15\cf14\b )\highlight1\cf0\b0  \highlight15\cf14\b /\highlight1\cf0\b0  \highlight7\cf6 1000000\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 " MILLISECONDS"\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 close\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+        \highlight5\cf4 // TEST GROUP BY PERFORMANCE //\par
+\highlight1\cf0 \par
+        \highlight5\cf4 // SQL OPTIMIZED\par
+\highlight1\cf0         \highlight17\cf16 start\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 String\highlight1\cf0  \highlight17\cf16 colName\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight11\cf10 "COUNT("\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 STATE\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 ")"\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+        \highlight17\cf16 query\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 SQLiteQueryBuilder\highlight15\cf14\b .\highlight17\cf16\b0 buildQueryString\highlight15\cf14\b (\highlight9\cf8 false\highlight15\cf14 ,\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 TABLE_NAME\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 String\highlight15\cf14\b []\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 STATE\highlight15\cf14\b ,\highlight1\cf0\b0 \par
+                \highlight17\cf16 colName\highlight1\cf0  \highlight15\cf14\b \},\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 STATE\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 sqdb\highlight15\cf14\b .\highlight17\cf16\b0 rawQuery\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight9\cf8\b while\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 c\highlight15\cf14\b .\highlight17\cf16\b0 moveToNext\highlight15\cf14\b ())\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 colid\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getColumnIndex\highlight15\cf14\b (\highlight17\cf16\b0 StudentTable\highlight15\cf14\b .\highlight17\cf16\b0 STATE\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 colid2\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getColumnIndex\highlight15\cf14\b (\highlight17\cf16\b0 colName\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight17\cf16 String\highlight1\cf0  \highlight17\cf16 state\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getString\highlight15\cf14\b (\highlight17\cf16\b0 colid\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 count\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getInt\highlight15\cf14\b (\highlight17\cf16\b0 colid2\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight11\cf10\b0 "STATE "\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 state\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 " HAS COUNT "\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 count\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b ((\highlight17\cf16\b0 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ()\highlight1\cf0\b0  \highlight15\cf14\b -\highlight1\cf0\b0  \highlight17\cf16 start\highlight15\cf14\b )\highlight1\cf0\b0  \highlight15\cf14\b /\highlight1\cf0\b0  \highlight7\cf6 1000000\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 " MILLISECONDS"\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 close\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4 // JAVA OPTIMIZED\par
+\highlight1\cf0         \highlight17\cf16 start\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 query\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 SQLiteQueryBuilder\highlight15\cf14\b .\highlight17\cf16\b0 buildQueryString\highlight15\cf14\b (\highlight9\cf8 false\highlight15\cf14 ,\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 TABLE_NAME\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 String\highlight15\cf14\b []\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 STATE\highlight1\cf0  \highlight15\cf14\b \},\highlight1\cf0\b0 \par
+                \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 sqdb\highlight15\cf14\b .\highlight17\cf16\b0 rawQuery\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight17\cf16 Map\highlight15\cf14\b <\highlight17\cf16\b0 String\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight17\cf16 Integer\highlight15\cf14\b >\highlight1\cf0\b0  \highlight17\cf16 map\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 HashMap\highlight15\cf14\b <\highlight17\cf16\b0 String\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight17\cf16 Integer\highlight15\cf14\b >();\highlight1\cf0\b0 \par
+        \highlight9\cf8\b while\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 c\highlight15\cf14\b .\highlight17\cf16\b0 moveToNext\highlight15\cf14\b ())\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 colid\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getColumnIndex\highlight15\cf14\b (\highlight17\cf16\b0 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 STATE\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight17\cf16 String\highlight1\cf0  \highlight17\cf16 state\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getString\highlight15\cf14\b (\highlight17\cf16\b0 colid\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight9\cf8\b if\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 map\highlight15\cf14\b .\highlight17\cf16\b0 containsKey\highlight15\cf14\b (\highlight17\cf16\b0 state\highlight15\cf14\b ))\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+                \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 curValue\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 map\highlight15\cf14\b .\highlight17\cf16\b0 get\highlight15\cf14\b (\highlight17\cf16\b0 state\highlight15\cf14\b );\highlight1\cf0\b0 \par
+                \highlight17\cf16 map\highlight15\cf14\b .\highlight17\cf16\b0 put\highlight15\cf14\b (\highlight17\cf16\b0 state\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight17\cf16 curValue\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight7\cf6 1\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight15\cf14\b \}\highlight1\cf0\b0  \highlight9\cf8\b else\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+                \highlight17\cf16 map\highlight15\cf14\b .\highlight17\cf16\b0 put\highlight15\cf14\b (\highlight17\cf16\b0 state\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight7\cf6 1\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+        \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight9\cf8\b for\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 String\highlight1\cf0  \highlight17\cf16 key\highlight1\cf0  \highlight15\cf14\b :\highlight1\cf0\b0  \highlight17\cf16 map\highlight15\cf14\b .\highlight17\cf16\b0 keySet\highlight15\cf14\b ())\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+            \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight11\cf10\b0 "STATE "\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 key\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 " HAS COUNT "\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 map\highlight15\cf14\b .\highlight17\cf16\b0 get\highlight15\cf14\b (\highlight17\cf16\b0 key\highlight15\cf14\b ));\highlight1\cf0\b0 \par
+        \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b ((\highlight17\cf16\b0 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ()\highlight1\cf0\b0  \highlight15\cf14\b -\highlight1\cf0\b0  \highlight17\cf16 start\highlight15\cf14\b )\highlight1\cf0\b0  \highlight15\cf14\b /\highlight1\cf0\b0  \highlight7\cf6 1000000\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 " MILLISECONDS"\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 close\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4 // TEST AVERAGE PERFORMANCE //\par
+\highlight1\cf0 \par
+        \highlight5\cf4 // SQL OPTIMIZED\par
+\highlight1\cf0         \highlight17\cf16 start\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 colName\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight11\cf10 "AVG("\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 INCOME\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 ")"\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+        \highlight17\cf16 query\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 SQLiteQueryBuilder\highlight15\cf14\b .\highlight17\cf16\b0 buildQueryString\highlight15\cf14\b (\highlight9\cf8 false\highlight15\cf14 ,\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 TABLE_NAME\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 String\highlight15\cf14\b []\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0  \highlight17\cf16 colName\highlight1\cf0  \highlight15\cf14\b \},\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0 \par
+                \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 sqdb\highlight15\cf14\b .\highlight17\cf16\b0 rawQuery\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight9\cf8\b while\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 c\highlight15\cf14\b .\highlight17\cf16\b0 moveToNext\highlight15\cf14\b ())\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 colid\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getColumnIndex\highlight15\cf14\b (\highlight17\cf16\b0 colName\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight19\cf18 double\highlight1\cf0  \highlight17\cf16 avgGrade\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getDouble\highlight15\cf14\b (\highlight17\cf16\b0 colid\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight11\cf10\b0 "AVG INCOME "\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 avgGrade\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b ((\highlight17\cf16\b0 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ()\highlight1\cf0\b0  \highlight15\cf14\b -\highlight1\cf0\b0  \highlight17\cf16 start\highlight15\cf14\b )\highlight1\cf0\b0  \highlight15\cf14\b /\highlight1\cf0\b0  \highlight7\cf6 1000000\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 " MILLISECONDS"\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 close\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4 // JAVA OPTIMIZED\par
+\highlight1\cf0         \highlight17\cf16 start\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 colName\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 INCOME\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+        \highlight17\cf16 query\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 SQLiteQueryBuilder\highlight15\cf14\b .\highlight17\cf16\b0 buildQueryString\highlight15\cf14\b (\highlight9\cf8 false\highlight15\cf14 ,\highlight1\cf0\b0  \highlight17\cf16 TestTable\highlight15\cf14\b .\highlight17\cf16\b0 TABLE_NAME\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight17\cf16 String\highlight15\cf14\b []\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0  \highlight17\cf16 colName\highlight1\cf0  \highlight15\cf14\b \},\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0 \par
+                \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 sqdb\highlight15\cf14\b .\highlight17\cf16\b0 rawQuery\highlight15\cf14\b (\highlight17\cf16\b0 query\highlight15\cf14\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight15\cf14 );\highlight1\cf0\b0 \par
+        \highlight19\cf18 double\highlight1\cf0  \highlight17\cf16 sumIncomes\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight7\cf6 0.0\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+        \highlight19\cf18 double\highlight1\cf0  \highlight17\cf16 numIncomes\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight7\cf6 0.0\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+        \highlight9\cf8\b while\highlight1\cf0\b0  \highlight15\cf14\b (\highlight17\cf16\b0 c\highlight15\cf14\b .\highlight17\cf16\b0 moveToNext\highlight15\cf14\b ())\highlight1\cf0\b0  \highlight15\cf14\b \{\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 colid\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getColumnIndex\highlight15\cf14\b (\highlight17\cf16\b0 colName\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight19\cf18 int\highlight1\cf0  \highlight17\cf16 income\highlight1\cf0  \highlight15\cf14\b =\highlight1\cf0\b0  \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 getInt\highlight15\cf14\b (\highlight17\cf16\b0 colid\highlight15\cf14\b );\highlight1\cf0\b0 \par
+            \highlight17\cf16 sumIncomes\highlight1\cf0  \highlight15\cf14\b +=\highlight1\cf0\b0  \highlight17\cf16 income\highlight15\cf14\b ;\highlight1\cf0\b0 \par
+            \highlight17\cf16 numIncomes\highlight15\cf14\b ++;\highlight1\cf0\b0 \par
+        \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b (\highlight11\cf10\b0 "AVG INCOME "\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight17\cf16 sumIncomes\highlight1\cf0  \highlight15\cf14\b /\highlight1\cf0\b0  \highlight17\cf16 numIncomes\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 System\highlight15\cf14\b .\highlight17\cf16\b0 out\highlight15\cf14\b .\highlight17\cf16\b0 println\highlight15\cf14\b ((\highlight17\cf16\b0 System\highlight15\cf14\b .\highlight17\cf16\b0 nanoTime\highlight15\cf14\b ()\highlight1\cf0\b0  \highlight15\cf14\b -\highlight1\cf0\b0  \highlight17\cf16 start\highlight15\cf14\b )\highlight1\cf0\b0  \highlight15\cf14\b /\highlight1\cf0\b0  \highlight7\cf6 1000000\highlight1\cf0  \highlight15\cf14\b +\highlight1\cf0\b0  \highlight11\cf10 " MILLISECONDS"\highlight15\cf14\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 c\highlight15\cf14\b .\highlight17\cf16\b0 close\highlight15\cf14\b ();\highlight1\cf0\b0 \par
+    \highlight15\cf14\b \}\highlight1\cf0\b0 \par
+\highlight15\cf14\b \}\highlight1\cf0\b0 \par
+}

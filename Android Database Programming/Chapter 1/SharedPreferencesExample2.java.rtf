@@ -1,0 +1,146 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+{\f008 Courier New;}
+{\f009 Courier New;}
+{\f010 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red000\green128\blue128;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f134245473\fs20\cb21\cf20 \highlight17\cf16 package\highlight1\cf0  \highlight15\cf14 jwei\highlight13\cf12\b .\highlight15\cf14\b0 apps\highlight13\cf12\b .\highlight15\cf14\b0 dataforandroid\highlight13\cf12\b .\highlight15\cf14\b0 ch1\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 jwei\highlight13\cf12\b .\highlight15\cf14\b0 apps\highlight13\cf12\b .\highlight15\cf14\b0 dataforandroid\highlight13\cf12\b .\highlight15\cf14\b0 R\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 app\highlight13\cf12\b .\highlight15\cf14\b0 Activity\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 content\highlight13\cf12\b .\highlight15\cf14\b0 Context\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 content\highlight13\cf12\b .\highlight15\cf14\b0 SharedPreferences\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 content\highlight13\cf12\b .\highlight15\cf14\b0 SharedPreferences\highlight13\cf12\b .\highlight15\cf14\b0 Editor\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 location\highlight13\cf12\b .\highlight15\cf14\b0 Location\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 location\highlight13\cf12\b .\highlight15\cf14\b0 LocationManager\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 os\highlight13\cf12\b .\highlight15\cf14\b0 Bundle\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 widget\highlight13\cf12\b .\highlight15\cf14\b0 EditText\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+\highlight5\cf4 /**\par
+ * Examples for use cases as defined in Chapter 1 of Data for Android.\par
+ * \par
+ * \highlight19\cf18\b @author\highlight5\cf4\b0  Jason Wei\par
+ * \par
+ */\highlight1\cf0 \par
+\highlight17\cf16 public\highlight1\cf0  \highlight17\cf16 class\highlight1\cf0  \highlight15\cf14 SharedPreferencesExample2\highlight1\cf0  \highlight9\cf8\b extends\highlight1\cf0\b0  \highlight15\cf14 Activity\highlight1\cf0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight17\cf16 private\highlight1\cf0  \highlight17\cf16 static\highlight1\cf0  \highlight17\cf16 final\highlight1\cf0  \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 MY_DB\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight11\cf10 "my_db"\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 @Override\highlight1\cf0 \par
+    \highlight17\cf16 protected\highlight1\cf0  \highlight17\cf16 void\highlight1\cf0  \highlight15\cf14 onCreate\highlight13\cf12\b (\highlight15\cf14\b0 Bundle\highlight1\cf0  \highlight15\cf14 savedInstanceState\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+        \highlight9\cf8\b super\highlight13\cf12 .\highlight15\cf14\b0 onCreate\highlight13\cf12\b (\highlight15\cf14\b0 savedInstanceState\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 setContentView\highlight13\cf12\b (\highlight15\cf14\b0 R\highlight13\cf12\b .\highlight15\cf14\b0 layout\highlight13\cf12\b .\highlight15\cf14\b0 main\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 SharedPreferences\highlight1\cf0  \highlight15\cf14 sp\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 getSharedPreferences\highlight13\cf12\b (\highlight15\cf14\b0 MY_DB\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 Context\highlight13\cf12\b .\highlight15\cf14\b0 MODE_PRIVATE\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4 /**\par
+         * CHECK IF THIS IS USER'S FIRST VISIT\par
+         */\highlight1\cf0 \par
+        \highlight17\cf16 boolean\highlight1\cf0  \highlight15\cf14 hasVisited\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 sp\highlight13\cf12\b .\highlight15\cf14\b0 getBoolean\highlight13\cf12\b (\highlight11\cf10\b0 "hasVisited"\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight9\cf8\b false\highlight13\cf12 );\highlight1\cf0\b0 \par
+        \highlight9\cf8\b if\highlight1\cf0\b0  \highlight13\cf12\b (!\highlight15\cf14\b0 hasVisited\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight3\cf2 // ...\par
+\highlight1\cf0             \highlight3\cf2 // SHOW SPLASH ACTIVITY, LOGIN ACTIVITY, ETC\par
+\highlight1\cf0             \highlight3\cf2 // ...\par
+\highlight1\cf0 \par
+            \highlight3\cf2 // DON'T FORGET TO COMMIT THE CHANGE\par
+\highlight1\cf0             \highlight15\cf14 Editor\highlight1\cf0  \highlight15\cf14 e\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 sp\highlight13\cf12\b .\highlight15\cf14\b0 edit\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+            \highlight15\cf14 e\highlight13\cf12\b .\highlight15\cf14\b0 putBoolean\highlight13\cf12\b (\highlight11\cf10\b0 "hasVisited"\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight9\cf8\b true\highlight13\cf12 );\highlight1\cf0\b0 \par
+            \highlight15\cf14 e\highlight13\cf12\b .\highlight15\cf14\b0 commit\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4 /**\par
+         * CHECK LAST VISIT TIME\par
+         */\highlight1\cf0 \par
+        \highlight17\cf16 long\highlight1\cf0  \highlight15\cf14 lastVisitTime\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 sp\highlight13\cf12\b .\highlight15\cf14\b0 getLong\highlight13\cf12\b (\highlight11\cf10\b0 "lastVisitKey"\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight7\cf6 0L\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 long\highlight1\cf0  \highlight15\cf14 timeElapsed\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 System\highlight13\cf12\b .\highlight15\cf14\b0 currentTimeMillis\highlight13\cf12\b ()\highlight1\cf0\b0  \highlight13\cf12\b -\highlight1\cf0\b0  \highlight15\cf14 lastVisitTime\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // YOUR UPDATE FREQUENCY HERE\par
+\highlight1\cf0         \highlight17\cf16 final\highlight1\cf0  \highlight17\cf16 long\highlight1\cf0  \highlight15\cf14 UPDATE_FREQ\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight7\cf6 1000\highlight1\cf0  \highlight13\cf12\b *\highlight1\cf0\b0  \highlight7\cf6 60\highlight1\cf0  \highlight13\cf12\b *\highlight1\cf0\b0  \highlight7\cf6 60\highlight1\cf0  \highlight13\cf12\b *\highlight1\cf0\b0  \highlight7\cf6 24\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+        \highlight9\cf8\b if\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 timeElapsed\highlight1\cf0  \highlight13\cf12\b >\highlight1\cf0\b0  \highlight15\cf14 UPDATE_FREQ\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight3\cf2 // ...\par
+\highlight1\cf0             \highlight3\cf2 // PERFORM NECESSARY UPDATES\par
+\highlight1\cf0             \highlight3\cf2 // ...\par
+\highlight1\cf0         \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // STORE LATEST UPDATE TIME\par
+\highlight1\cf0         \highlight15\cf14 Editor\highlight1\cf0  \highlight15\cf14 e\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 sp\highlight13\cf12\b .\highlight15\cf14\b0 edit\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight15\cf14 e\highlight13\cf12\b .\highlight15\cf14\b0 putLong\highlight13\cf12\b (\highlight11\cf10\b0 "lastVisitKey"\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 System\highlight13\cf12\b .\highlight15\cf14\b0 currentTimeMillis\highlight13\cf12\b ());\highlight1\cf0\b0 \par
+        \highlight15\cf14 e\highlight13\cf12\b .\highlight15\cf14\b0 commit\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4 /**\par
+         * CACHE USER NAME AS STRING\par
+         */\highlight1\cf0 \par
+        \highlight3\cf2 // TYPICALLY YOU WILL HAVE AN EDIT TEXT VIEW\par
+\highlight1\cf0         \highlight3\cf2 // WHERE THE USER ENTERS THEIR USERNAME\par
+\highlight1\cf0         \highlight15\cf14 EditText\highlight1\cf0  \highlight15\cf14 userNameLoginText\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 EditText\highlight13\cf12\b )\highlight1\cf0\b0  \highlight15\cf14 findViewById\highlight13\cf12\b (\highlight15\cf14\b0 R\highlight13\cf12\b .\highlight15\cf14\b0 id\highlight13\cf12\b .\highlight15\cf14\b0 login_editText\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 userName\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 userNameLoginText\highlight13\cf12\b .\highlight15\cf14\b0 getText\highlight13\cf12\b ().\highlight15\cf14\b0 toString\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 Editor\highlight1\cf0  \highlight15\cf14 e1\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 sp\highlight13\cf12\b .\highlight15\cf14\b0 edit\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight15\cf14 e1\highlight13\cf12\b .\highlight15\cf14\b0 putString\highlight13\cf12\b (\highlight11\cf10\b0 "userNameCache"\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 userName\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 e1\highlight13\cf12\b .\highlight15\cf14\b0 commit\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4 /**\par
+         * REMEBERING A CERTAIN STATE\par
+         */\highlight1\cf0 \par
+        \highlight17\cf16 boolean\highlight1\cf0  \highlight15\cf14 isSilentMode\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 sp\highlight13\cf12\b .\highlight15\cf14\b0 getBoolean\highlight13\cf12\b (\highlight11\cf10\b0 "isSilentRinger"\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight9\cf8\b false\highlight13\cf12 );\highlight1\cf0\b0 \par
+        \highlight9\cf8\b if\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 isSilentMode\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight3\cf2 // ...\par
+\highlight1\cf0             \highlight3\cf2 // TURN OFF SOUND\par
+\highlight1\cf0             \highlight3\cf2 // ...\par
+\highlight1\cf0         \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4 /**\par
+         * CACHING A LOCATION\par
+         */\highlight1\cf0 \par
+        \highlight3\cf2 // INSTANTIATE LOCATION MANAGER\par
+\highlight1\cf0         \highlight15\cf14 LocationManager\highlight1\cf0  \highlight15\cf14 locationManager\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 LocationManager\highlight13\cf12\b )\highlight1\cf0\b0  \highlight9\cf8\b this\highlight13\cf12 .\highlight15\cf14\b0 getSystemService\highlight13\cf12\b (\highlight15\cf14\b0 Context\highlight13\cf12\b .\highlight15\cf14\b0 LOCATION_SERVICE\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight3\cf2 // ...\par
+\highlight1\cf0         \highlight3\cf2 // IGNORE LOCATION LISTENERS\par
+\highlight1\cf0         \highlight3\cf2 // ...\par
+\highlight1\cf0         \highlight15\cf14 Location\highlight1\cf0  \highlight15\cf14 lastKnownLocation\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 locationManager\highlight13\cf12\b .\highlight15\cf14\b0 getLastKnownLocation\highlight13\cf12\b (\highlight15\cf14\b0 LocationManager\highlight13\cf12\b .\highlight15\cf14\b0 NETWORK_PROVIDER\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight17\cf16 float\highlight1\cf0  \highlight15\cf14 lat\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight13\cf12\b (\highlight17\cf16\b0 float\highlight13\cf12\b )\highlight1\cf0\b0  \highlight15\cf14 lastKnownLocation\highlight13\cf12\b .\highlight15\cf14\b0 getLatitude\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 float\highlight1\cf0  \highlight15\cf14 lon\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight13\cf12\b (\highlight17\cf16\b0 float\highlight13\cf12\b )\highlight1\cf0\b0  \highlight15\cf14 lastKnownLocation\highlight13\cf12\b .\highlight15\cf14\b0 getLongitude\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 Editor\highlight1\cf0  \highlight15\cf14 e2\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 sp\highlight13\cf12\b .\highlight15\cf14\b0 edit\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight15\cf14 e2\highlight13\cf12\b .\highlight15\cf14\b0 putFloat\highlight13\cf12\b (\highlight11\cf10\b0 "latitudeCache"\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 lat\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 e2\highlight13\cf12\b .\highlight15\cf14\b0 putFloat\highlight13\cf12\b (\highlight11\cf10\b0 "longitudeCache"\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 lon\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 e\highlight13\cf12\b .\highlight15\cf14\b0 commit\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+    \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\highlight13\cf12\b \}\highlight1\cf0\b0 \par
+}

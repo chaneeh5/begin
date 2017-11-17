@@ -1,0 +1,111 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+{\f008 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f6422633\fs20\cb17\cf16 \highlight15\cf14 package\highlight1\cf0  \highlight13\cf12 jwei\highlight11\cf10\b .\highlight13\cf12\b0 apps\highlight11\cf10\b .\highlight13\cf12\b0 dataforandroid\highlight11\cf10\b .\highlight13\cf12\b0 ch4\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 jwei\highlight11\cf10\b .\highlight13\cf12\b0 apps\highlight11\cf10\b .\highlight13\cf12\b0 dataforandroid\highlight11\cf10\b .\highlight13\cf12\b0 R\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 app\highlight11\cf10\b .\highlight13\cf12\b0 Activity\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 content\highlight11\cf10\b .\highlight13\cf12\b0 ContentResolver\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 content\highlight11\cf10\b .\highlight13\cf12\b0 ContentValues\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 database\highlight11\cf10\b .\highlight13\cf12\b0 Cursor\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 net\highlight11\cf10\b .\highlight13\cf12\b0 Uri\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 os\highlight11\cf10\b .\highlight13\cf12\b0 Bundle\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 class\highlight1\cf0  \highlight13\cf12 ContentProviderActivity\highlight1\cf0  \highlight7\cf6\b extends\highlight1\cf0\b0  \highlight13\cf12 Activity\highlight1\cf0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight13\cf12 @Override\highlight1\cf0 \par
+    \highlight15\cf14 protected\highlight1\cf0  \highlight15\cf14 void\highlight1\cf0  \highlight13\cf12 onCreate\highlight11\cf10\b (\highlight13\cf12\b0 Bundle\highlight1\cf0  \highlight13\cf12 savedInstanceState\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight7\cf6\b super\highlight11\cf10 .\highlight13\cf12\b0 onCreate\highlight11\cf10\b (\highlight13\cf12\b0 savedInstanceState\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 setContentView\highlight11\cf10\b (\highlight13\cf12\b0 R\highlight11\cf10\b .\highlight13\cf12\b0 layout\highlight11\cf10\b .\highlight13\cf12\b0 main\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 ContentResolver\highlight1\cf0  \highlight13\cf12 cr\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 getContentResolver\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 ContentValues\highlight1\cf0  \highlight13\cf12 contentValue\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 ContentValues\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12 contentValue\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "Jason Wei"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 contentValue\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 STATE\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "CA"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 contentValue\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 INCOME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 100000\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 cr\highlight11\cf10\b .\highlight13\cf12\b0 insert\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 CONTENT_URI\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 contentValue\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 contentValue\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 ContentValues\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12 contentValue\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "James Lee"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 contentValue\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 STATE\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "NY"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 contentValue\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 INCOME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 120000\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 cr\highlight11\cf10\b .\highlight13\cf12\b0 insert\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 CONTENT_URI\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 contentValue\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 contentValue\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 ContentValues\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12 contentValue\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "Daniel Lee"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 contentValue\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 STATE\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "NY"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 contentValue\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 INCOME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 80000\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 cr\highlight11\cf10\b .\highlight13\cf12\b0 insert\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 CONTENT_URI\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 contentValue\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // QUERY TABLE FOR ALL COLUMNS AND ROWS\par
+\highlight1\cf0         \highlight13\cf12 Cursor\highlight1\cf0  \highlight13\cf12 c\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 cr\highlight11\cf10\b .\highlight13\cf12\b0 query\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 CONTENT_URI\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight13\cf12 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 INCOME\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " ASC"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // LET THE ACTIVITY MANAGE THE CURSOR\par
+\highlight1\cf0         \highlight13\cf12 startManagingCursor\highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 idCol\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getColumnIndex\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 ID\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 nameCol\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getColumnIndex\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 stateCol\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getColumnIndex\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 STATE\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 incomeCol\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getColumnIndex\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 INCOME\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight7\cf6\b while\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 moveToNext\highlight11\cf10\b ())\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 id\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getInt\highlight11\cf10\b (\highlight13\cf12\b0 idCol\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight13\cf12 String\highlight1\cf0  \highlight13\cf12 name\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getString\highlight11\cf10\b (\highlight13\cf12\b0 nameCol\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight13\cf12 String\highlight1\cf0  \highlight13\cf12 state\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getString\highlight11\cf10\b (\highlight13\cf12\b0 stateCol\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 income\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getInt\highlight11\cf10\b (\highlight13\cf12\b0 incomeCol\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight13\cf12 System\highlight11\cf10\b .\highlight13\cf12\b0 out\highlight11\cf10\b .\highlight13\cf12\b0 println\highlight11\cf10\b (\highlight9\cf8\b0 "RETRIEVED ||"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 id\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "||"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 name\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "||"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 state\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "||"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 income\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 System\highlight11\cf10\b .\highlight13\cf12\b0 out\highlight11\cf10\b .\highlight13\cf12\b0 println\highlight11\cf10\b (\highlight9\cf8\b0 "----------------------------------------"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // QUERY BY A SPECIFIC ID\par
+\highlight1\cf0         \highlight13\cf12 Uri\highlight1\cf0  \highlight13\cf12 myCitizen\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 Uri\highlight11\cf10\b .\highlight13\cf12\b0 withAppendedPath\highlight11\cf10\b (\highlight13\cf12\b0 CitizenTable\highlight11\cf10\b .\highlight13\cf12\b0 CONTENT_URI\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "2"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 Cursor\highlight1\cf0  \highlight13\cf12 c1\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 cr\highlight11\cf10\b .\highlight13\cf12\b0 query\highlight11\cf10\b (\highlight13\cf12\b0 myCitizen\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // LET THE ACTIVITY MANAGE THE CURSOR\par
+\highlight1\cf0         \highlight13\cf12 startManagingCursor\highlight11\cf10\b (\highlight13\cf12\b0 c1\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight7\cf6\b while\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 c1\highlight11\cf10\b .\highlight13\cf12\b0 moveToNext\highlight11\cf10\b ())\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 id\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c1\highlight11\cf10\b .\highlight13\cf12\b0 getInt\highlight11\cf10\b (\highlight13\cf12\b0 idCol\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight13\cf12 String\highlight1\cf0  \highlight13\cf12 name\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c1\highlight11\cf10\b .\highlight13\cf12\b0 getString\highlight11\cf10\b (\highlight13\cf12\b0 nameCol\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight13\cf12 String\highlight1\cf0  \highlight13\cf12 state\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c1\highlight11\cf10\b .\highlight13\cf12\b0 getString\highlight11\cf10\b (\highlight13\cf12\b0 stateCol\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 income\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c1\highlight11\cf10\b .\highlight13\cf12\b0 getInt\highlight11\cf10\b (\highlight13\cf12\b0 incomeCol\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight13\cf12 System\highlight11\cf10\b .\highlight13\cf12\b0 out\highlight11\cf10\b .\highlight13\cf12\b0 println\highlight11\cf10\b (\highlight9\cf8\b0 "RETRIEVED ||"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 id\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "||"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 name\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "||"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 state\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "||"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 income\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\highlight11\cf10\b \}\highlight1\cf0\b0 \par
+}

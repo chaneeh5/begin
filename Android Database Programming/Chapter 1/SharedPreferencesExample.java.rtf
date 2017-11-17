@@ -1,0 +1,75 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+{\f008 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f134245473\fs20\cb17\cf16 \highlight13\cf12 package\highlight1\cf0  \highlight11\cf10 jwei\highlight9\cf8\b .\highlight11\cf10\b0 apps\highlight9\cf8\b .\highlight11\cf10\b0 dataforandroid\highlight9\cf8\b .\highlight11\cf10\b0 ch1\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 jwei\highlight9\cf8\b .\highlight11\cf10\b0 apps\highlight9\cf8\b .\highlight11\cf10\b0 dataforandroid\highlight9\cf8\b .\highlight11\cf10\b0 R\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 app\highlight9\cf8\b .\highlight11\cf10\b0 Activity\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 content\highlight9\cf8\b .\highlight11\cf10\b0 Context\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 content\highlight9\cf8\b .\highlight11\cf10\b0 SharedPreferences\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 content\highlight9\cf8\b .\highlight11\cf10\b0 SharedPreferences\highlight9\cf8\b .\highlight11\cf10\b0 Editor\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 os\highlight9\cf8\b .\highlight11\cf10\b0 Bundle\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 util\highlight9\cf8\b .\highlight11\cf10\b0 Log\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+\highlight3\cf2 /**\par
+ * Examples for initial case as defined in Chapter 1 of Data for Android.\par
+ * \par
+ * \highlight15\cf14\b @author\highlight3\cf2\b0  Jason Wei\par
+ * \par
+ */\highlight1\cf0 \par
+\highlight13\cf12 public\highlight1\cf0  \highlight13\cf12 class\highlight1\cf0  \highlight11\cf10 SharedPreferencesExample\highlight1\cf0  \highlight5\cf4\b extends\highlight1\cf0\b0  \highlight11\cf10 Activity\highlight1\cf0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight13\cf12 private\highlight1\cf0  \highlight13\cf12 static\highlight1\cf0  \highlight13\cf12 final\highlight1\cf0  \highlight11\cf10 String\highlight1\cf0  \highlight11\cf10 MY_DB\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight7\cf6 "my_db"\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight11\cf10 @Override\highlight1\cf0 \par
+    \highlight13\cf12 public\highlight1\cf0  \highlight13\cf12 void\highlight1\cf0  \highlight11\cf10 onCreate\highlight9\cf8\b (\highlight11\cf10\b0 Bundle\highlight1\cf0  \highlight11\cf10 savedInstanceState\highlight9\cf8\b )\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+        \highlight5\cf4\b super\highlight9\cf8 .\highlight11\cf10\b0 onCreate\highlight9\cf8\b (\highlight11\cf10\b0 savedInstanceState\highlight9\cf8\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10 setContentView\highlight9\cf8\b (\highlight11\cf10\b0 R\highlight9\cf8\b .\highlight11\cf10\b0 layout\highlight9\cf8\b .\highlight11\cf10\b0 main\highlight9\cf8\b );\highlight1\cf0\b0 \par
+\par
+        \highlight11\cf10 SharedPreferences\highlight1\cf0  \highlight11\cf10 sp\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight11\cf10 getSharedPreferences\highlight9\cf8\b (\highlight11\cf10\b0 MY_DB\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight11\cf10 Context\highlight9\cf8\b .\highlight11\cf10\b0 MODE_PRIVATE\highlight9\cf8\b );\highlight1\cf0\b0 \par
+\par
+        \highlight11\cf10 Editor\highlight1\cf0  \highlight11\cf10 e\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight11\cf10 sp\highlight9\cf8\b .\highlight11\cf10\b0 edit\highlight9\cf8\b ();\highlight1\cf0\b0 \par
+        \highlight11\cf10 e\highlight9\cf8\b .\highlight11\cf10\b0 putString\highlight9\cf8\b (\highlight7\cf6\b0 "testStringKey"\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight7\cf6 "Hello World"\highlight9\cf8\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10 e\highlight9\cf8\b .\highlight11\cf10\b0 putBoolean\highlight9\cf8\b (\highlight7\cf6\b0 "testBooleanKey"\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight5\cf4\b true\highlight9\cf8 );\highlight1\cf0\b0 \par
+        \highlight11\cf10 e\highlight9\cf8\b .\highlight11\cf10\b0 commit\highlight9\cf8\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight11\cf10 String\highlight1\cf0  \highlight11\cf10 stringValue\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight11\cf10 sp\highlight9\cf8\b .\highlight11\cf10\b0 getString\highlight9\cf8\b (\highlight7\cf6\b0 "testStringKey"\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight7\cf6 "error"\highlight9\cf8\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 boolean\highlight1\cf0  \highlight11\cf10 booleanValue\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight11\cf10 sp\highlight9\cf8\b .\highlight11\cf10\b0 getBoolean\highlight9\cf8\b (\highlight7\cf6\b0 "testBooleanKey"\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight5\cf4\b false\highlight9\cf8 );\highlight1\cf0\b0 \par
+\par
+        \highlight11\cf10 Log\highlight9\cf8\b .\highlight11\cf10\b0 i\highlight9\cf8\b (\highlight7\cf6\b0 "SharedPreferencesExample"\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight7\cf6 "Retrieved string value: "\highlight1\cf0  \highlight9\cf8\b +\highlight1\cf0\b0  \highlight11\cf10 stringValue\highlight9\cf8\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10 Log\highlight9\cf8\b .\highlight11\cf10\b0 i\highlight9\cf8\b (\highlight7\cf6\b0 "SharedPreferencesExample"\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight7\cf6 "Retrieved boolean value: "\highlight1\cf0  \highlight9\cf8\b +\highlight1\cf0\b0  \highlight11\cf10 booleanValue\highlight9\cf8\b );\highlight1\cf0\b0 \par
+    \highlight9\cf8\b \}\highlight1\cf0\b0 \par
+\highlight9\cf8\b \}\highlight1\cf0\b0 \par
+}

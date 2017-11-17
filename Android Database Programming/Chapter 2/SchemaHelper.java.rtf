@@ -1,0 +1,209 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+{\f008 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f33\fs20\cb17\cf16 \highlight15\cf14 package\highlight1\cf0  \highlight13\cf12 jwei\highlight11\cf10\b .\highlight13\cf12\b0 apps\highlight11\cf10\b .\highlight13\cf12\b0 dataforandroid\highlight11\cf10\b .\highlight13\cf12\b0 ch2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 java\highlight11\cf10\b .\highlight13\cf12\b0 util\highlight11\cf10\b .\highlight13\cf12\b0 HashSet\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 java\highlight11\cf10\b .\highlight13\cf12\b0 util\highlight11\cf10\b .\highlight13\cf12\b0 Set\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 content\highlight11\cf10\b .\highlight13\cf12\b0 ContentValues\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 content\highlight11\cf10\b .\highlight13\cf12\b0 Context\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 database\highlight11\cf10\b .\highlight13\cf12\b0 Cursor\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 database\highlight11\cf10\b .\highlight13\cf12\b0 sqlite\highlight11\cf10\b .\highlight13\cf12\b0 SQLiteDatabase\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 database\highlight11\cf10\b .\highlight13\cf12\b0 sqlite\highlight11\cf10\b .\highlight13\cf12\b0 SQLiteOpenHelper\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 util\highlight11\cf10\b .\highlight13\cf12\b0 Log\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 class\highlight1\cf0  \highlight13\cf12 SchemaHelper\highlight1\cf0  \highlight7\cf6\b extends\highlight1\cf0\b0  \highlight13\cf12 SQLiteOpenHelper\highlight1\cf0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 private\highlight1\cf0  \highlight15\cf14 static\highlight1\cf0  \highlight15\cf14 final\highlight1\cf0  \highlight13\cf12 String\highlight1\cf0  \highlight13\cf12 DATABASE_NAME\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight9\cf8 "adv_data.db"\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight3\cf2 // TOGGLE THIS NUMBER FOR UPDATING TABLES AND DATABASE\par
+\highlight1\cf0     \highlight15\cf14 private\highlight1\cf0  \highlight15\cf14 static\highlight1\cf0  \highlight15\cf14 final\highlight1\cf0  \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 DATABASE_VERSION\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight5\cf4 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight13\cf12 SchemaHelper\highlight11\cf10\b (\highlight13\cf12\b0 Context\highlight1\cf0  \highlight13\cf12 context\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight7\cf6\b super\highlight11\cf10 (\highlight13\cf12\b0 context\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 DATABASE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight13\cf12 DATABASE_VERSION\highlight11\cf10\b );\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight13\cf12 @Override\highlight1\cf0 \par
+    \highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 void\highlight1\cf0  \highlight13\cf12 onCreate\highlight11\cf10\b (\highlight13\cf12\b0 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 db\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight3\cf2 // CREATE STUDENTS TABLE\par
+\highlight1\cf0         \highlight13\cf12 db\highlight11\cf10\b .\highlight13\cf12\b0 execSQL\highlight11\cf10\b (\highlight9\cf8\b0 "CREATE TABLE "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " ("\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 ID\highlight1\cf0 \par
+                \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " INTEGER PRIMARY KEY AUTOINCREMENT,"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " TEXT,"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 STATE\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " TEXT,"\highlight1\cf0 \par
+                \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 GRADE\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " INTEGER);"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // CREATE COURSES TABLE\par
+\highlight1\cf0         \highlight13\cf12 db\highlight11\cf10\b .\highlight13\cf12\b0 execSQL\highlight11\cf10\b (\highlight9\cf8\b0 "CREATE TABLE "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 CourseTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " ("\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 CourseTable\highlight11\cf10\b .\highlight13\cf12\b0 ID\highlight1\cf0 \par
+                \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " INTEGER PRIMARY KEY AUTOINCREMENT,"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 CourseTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " TEXT);"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // CREATE CLASSES MAPPING TABLE\par
+\highlight1\cf0         \highlight13\cf12 db\highlight11\cf10\b .\highlight13\cf12\b0 execSQL\highlight11\cf10\b (\highlight9\cf8\b0 "CREATE TABLE "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " ("\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 ID\highlight1\cf0 \par
+                \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " INTEGER PRIMARY KEY AUTOINCREMENT,"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 STUDENT_ID\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " INTEGER,"\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 COURSE_ID\highlight1\cf0 \par
+                \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " INTEGER);"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight13\cf12 @Override\highlight1\cf0 \par
+    \highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 void\highlight1\cf0  \highlight13\cf12 onUpgrade\highlight11\cf10\b (\highlight13\cf12\b0 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 db\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 oldVersion\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 newVersion\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight13\cf12 Log\highlight11\cf10\b .\highlight13\cf12\b0 w\highlight11\cf10\b (\highlight9\cf8\b0 "LOG_TAG"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "Upgrading database from version "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 oldVersion\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " to "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 newVersion\highlight1\cf0 \par
+                \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 ", which will destroy all old data"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // KILL PREVIOUS TABLES IF UPGRADED\par
+\highlight1\cf0         \highlight13\cf12 db\highlight11\cf10\b .\highlight13\cf12\b0 execSQL\highlight11\cf10\b (\highlight9\cf8\b0 "DROP TABLE IF EXISTS "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 db\highlight11\cf10\b .\highlight13\cf12\b0 execSQL\highlight11\cf10\b (\highlight9\cf8\b0 "DROP TABLE IF EXISTS "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 CourseTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 db\highlight11\cf10\b .\highlight13\cf12\b0 execSQL\highlight11\cf10\b (\highlight9\cf8\b0 "DROP TABLE IF EXISTS "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // CREATE NEW INSTANCE OF SCHEMA\par
+\highlight1\cf0         \highlight13\cf12 onCreate\highlight11\cf10\b (\highlight13\cf12\b0 db\highlight11\cf10\b );\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 boolean\highlight1\cf0  \highlight13\cf12 addStudent\highlight11\cf10\b (\highlight13\cf12\b0 String\highlight1\cf0  \highlight13\cf12 name\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 String\highlight1\cf0  \highlight13\cf12 state\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 grade\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight3\cf2 // CREATE A CONTENTVALUE OBJECT\par
+\highlight1\cf0         \highlight13\cf12 ContentValues\highlight1\cf0  \highlight13\cf12 cv\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 ContentValues\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12 cv\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 name\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 cv\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 STATE\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 state\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 cv\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 GRADE\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 grade\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // RETRIEVE WRITEABLE DATABASE AND INSERT\par
+\highlight1\cf0         \highlight13\cf12 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 sd\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 getWritableDatabase\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 result\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 insert\highlight11\cf10\b (\highlight13\cf12\b0 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 cv\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b return\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 result\highlight1\cf0  \highlight11\cf10\b >=\highlight1\cf0\b0  \highlight5\cf4 0\highlight11\cf10\b );\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 boolean\highlight1\cf0  \highlight13\cf12 addCourse\highlight11\cf10\b (\highlight13\cf12\b0 String\highlight1\cf0  \highlight13\cf12 name\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight13\cf12 ContentValues\highlight1\cf0  \highlight13\cf12 cv\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 ContentValues\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12 cv\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 CourseTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 name\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 sd\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 getWritableDatabase\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 result\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 insert\highlight11\cf10\b (\highlight13\cf12\b0 CourseTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 CourseTable\highlight11\cf10\b .\highlight13\cf12\b0 NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 cv\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b return\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 result\highlight1\cf0  \highlight11\cf10\b >=\highlight1\cf0\b0  \highlight5\cf4 0\highlight11\cf10\b );\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 boolean\highlight1\cf0  \highlight13\cf12 enrollStudentClass\highlight11\cf10\b (\highlight15\cf14\b0 int\highlight1\cf0  \highlight13\cf12 studentId\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 courseId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight13\cf12 ContentValues\highlight1\cf0  \highlight13\cf12 cv\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 ContentValues\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12 cv\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 STUDENT_ID\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 studentId\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 cv\highlight11\cf10\b .\highlight13\cf12\b0 put\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 COURSE_ID\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 courseId\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 sd\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 getWritableDatabase\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 result\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 insert\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 STUDENT_ID\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 cv\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b return\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 result\highlight1\cf0  \highlight11\cf10\b >=\highlight1\cf0\b0  \highlight5\cf4 0\highlight11\cf10\b );\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 public\highlight1\cf0  \highlight13\cf12 Cursor\highlight1\cf0  \highlight13\cf12 getStudentsForCourse\highlight11\cf10\b (\highlight15\cf14\b0 int\highlight1\cf0  \highlight13\cf12 courseId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight13\cf12 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 sd\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 getWritableDatabase\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // WE ONLY NEED TO RETURN STUDENT IDS\par
+\highlight1\cf0         \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight13\cf12 columns\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 STUDENT_ID\highlight1\cf0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight13\cf12 selectionArgs\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b .\highlight13\cf12\b0 valueOf\highlight11\cf10\b (\highlight13\cf12\b0 courseId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // QUERY CLASS MAP FOR STUDENTS IN COURSE\par
+\highlight1\cf0         \highlight13\cf12 Cursor\highlight1\cf0  \highlight13\cf12 c\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 query\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 columns\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 COURSE_ID\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "= ? "\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 selectionArgs\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0 \par
+                \highlight7\cf6\b null\highlight11\cf10 );\highlight1\cf0\b0 \par
+\par
+        \highlight7\cf6\b return\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 public\highlight1\cf0  \highlight13\cf12 Cursor\highlight1\cf0  \highlight13\cf12 getCoursesForStudent\highlight11\cf10\b (\highlight15\cf14\b0 int\highlight1\cf0  \highlight13\cf12 studentId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight13\cf12 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 sd\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 getWritableDatabase\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // WE ONLY NEED TO RETURN COURSE IDS\par
+\highlight1\cf0         \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight13\cf12 columns\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 COURSE_ID\highlight1\cf0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight13\cf12 selectionArgs\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b .\highlight13\cf12\b0 valueOf\highlight11\cf10\b (\highlight13\cf12\b0 studentId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // QUERY CLASS MAP FOR STUDENTS IN COURSE\par
+\highlight1\cf0         \highlight13\cf12 Cursor\highlight1\cf0  \highlight13\cf12 c\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 query\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 columns\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 STUDENT_ID\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "= ? "\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 selectionArgs\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0 \par
+                \highlight7\cf6\b null\highlight11\cf10 );\highlight1\cf0\b0 \par
+\par
+        \highlight7\cf6\b return\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 public\highlight1\cf0  \highlight13\cf12 Set\highlight11\cf10\b <\highlight13\cf12\b0 Integer\highlight11\cf10\b >\highlight1\cf0\b0  \highlight13\cf12 getStudentsAndGradeForCourse\highlight11\cf10\b (\highlight15\cf14\b0 int\highlight1\cf0  \highlight13\cf12 courseId\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 grade\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight13\cf12 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 sd\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 getWritableDatabase\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // WE ONLY NEED TO RETURN COURSE IDS\par
+\highlight1\cf0         \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight13\cf12 columns\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 STUDENT_ID\highlight1\cf0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight13\cf12 selectionArgs\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b .\highlight13\cf12\b0 valueOf\highlight11\cf10\b (\highlight13\cf12\b0 courseId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // QUERY CLASS MAP FOR STUDENTS IN COURSE\par
+\highlight1\cf0         \highlight13\cf12 Cursor\highlight1\cf0  \highlight13\cf12 c\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 query\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 columns\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 COURSE_ID\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "= ? "\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 selectionArgs\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0 \par
+                \highlight7\cf6\b null\highlight11\cf10 );\highlight1\cf0\b0 \par
+        \highlight13\cf12 Set\highlight11\cf10\b <\highlight13\cf12\b0 Integer\highlight11\cf10\b >\highlight1\cf0\b0  \highlight13\cf12 returnIds\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 HashSet\highlight11\cf10\b <\highlight13\cf12\b0 Integer\highlight11\cf10\b >();\highlight1\cf0\b0 \par
+        \highlight7\cf6\b while\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 moveToNext\highlight11\cf10\b ())\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 id\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getInt\highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 getColumnIndex\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 STUDENT_ID\highlight11\cf10\b ));\highlight1\cf0\b0 \par
+            \highlight13\cf12 returnIds\highlight11\cf10\b .\highlight13\cf12\b0 add\highlight11\cf10\b (\highlight13\cf12\b0 id\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // MAKE SECOND QUERY\par
+\highlight1\cf0         \highlight13\cf12 columns\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 ID\highlight1\cf0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+        \highlight13\cf12 selectionArgs\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b .\highlight13\cf12\b0 valueOf\highlight11\cf10\b (\highlight13\cf12\b0 grade\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 c\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 query\highlight11\cf10\b (\highlight13\cf12\b0 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 columns\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 GRADE\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 selectionArgs\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 ,\highlight1\cf0\b0  \highlight7\cf6\b null\highlight11\cf10 );\highlight1\cf0\b0 \par
+        \highlight13\cf12 Set\highlight11\cf10\b <\highlight13\cf12\b0 Integer\highlight11\cf10\b >\highlight1\cf0\b0  \highlight13\cf12 gradeIds\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 HashSet\highlight11\cf10\b <\highlight13\cf12\b0 Integer\highlight11\cf10\b >();\highlight1\cf0\b0 \par
+        \highlight7\cf6\b while\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 moveToNext\highlight11\cf10\b ())\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 id\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getInt\highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 getColumnIndex\highlight11\cf10\b (\highlight13\cf12\b0 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 ID\highlight11\cf10\b ));\highlight1\cf0\b0 \par
+            \highlight13\cf12 gradeIds\highlight11\cf10\b .\highlight13\cf12\b0 add\highlight11\cf10\b (\highlight13\cf12\b0 id\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // RETURN INTERSECTION OF ID SETS\par
+\highlight1\cf0         \highlight13\cf12 returnIds\highlight11\cf10\b .\highlight13\cf12\b0 retainAll\highlight11\cf10\b (\highlight13\cf12\b0 gradeIds\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b return\highlight1\cf0\b0  \highlight13\cf12 returnIds\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 boolean\highlight1\cf0  \highlight13\cf12 removeStudent\highlight11\cf10\b (\highlight15\cf14\b0 int\highlight1\cf0  \highlight13\cf12 studentId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight13\cf12 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 sd\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 getWritableDatabase\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight13\cf12 whereArgs\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b .\highlight13\cf12\b0 valueOf\highlight11\cf10\b (\highlight13\cf12\b0 studentId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // MAKE SURE YOU DELETE ALL CLASSES STUDENT IS SIGNED UP FOR\par
+\highlight1\cf0         \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 delete\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 STUDENT_ID\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "= ? "\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 whereArgs\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // THEN DELETE STUDENT\par
+\highlight1\cf0         \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 result\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 delete\highlight11\cf10\b (\highlight13\cf12\b0 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 StudentTable\highlight11\cf10\b .\highlight13\cf12\b0 ID\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "= ? "\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 whereArgs\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b return\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 result\highlight1\cf0  \highlight11\cf10\b >\highlight1\cf0\b0  \highlight5\cf4 0\highlight11\cf10\b );\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 boolean\highlight1\cf0  \highlight13\cf12 removeCourse\highlight11\cf10\b (\highlight15\cf14\b0 int\highlight1\cf0  \highlight13\cf12 courseId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight13\cf12 SQLiteDatabase\highlight1\cf0  \highlight13\cf12 sd\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 getWritableDatabase\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight13\cf12 whereArgs\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b []\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0  \highlight13\cf12 String\highlight11\cf10\b .\highlight13\cf12\b0 valueOf\highlight11\cf10\b (\highlight13\cf12\b0 courseId\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \};\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // MAKE SURE YOU REMOVE COURSE FROM ALL STUDENTS ENROLLED\par
+\highlight1\cf0         \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 delete\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 COURSE_ID\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "= ? "\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 whereArgs\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // THEN DELETE COURSE\par
+\highlight1\cf0         \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 result\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sd\highlight11\cf10\b .\highlight13\cf12\b0 delete\highlight11\cf10\b (\highlight13\cf12\b0 CourseTable\highlight11\cf10\b .\highlight13\cf12\b0 TABLE_NAME\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 CourseTable\highlight11\cf10\b .\highlight13\cf12\b0 ID\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 "= ? "\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 whereArgs\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b return\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 result\highlight1\cf0  \highlight11\cf10\b >\highlight1\cf0\b0  \highlight5\cf4 0\highlight11\cf10\b );\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\highlight11\cf10\b \}\highlight1\cf0\b0 \par
+}

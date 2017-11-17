@@ -1,0 +1,262 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+{\f008 Courier New;}
+{\f009 Courier New;}
+{\f010 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red000\green128\blue128;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f5439552\fs20\cb21\cf20 \highlight17\cf16 package\highlight1\cf0  \highlight15\cf14 jwei\highlight13\cf12\b .\highlight15\cf14\b0 apps\highlight13\cf12\b .\highlight15\cf14\b0 dataforandroid\highlight13\cf12\b .\highlight15\cf14\b0 ch4\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 java\highlight13\cf12\b .\highlight15\cf14\b0 util\highlight13\cf12\b .\highlight15\cf14\b0 HashMap\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 content\highlight13\cf12\b .\highlight15\cf14\b0 ContentProvider\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 content\highlight13\cf12\b .\highlight15\cf14\b0 ContentUris\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 content\highlight13\cf12\b .\highlight15\cf14\b0 ContentValues\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 content\highlight13\cf12\b .\highlight15\cf14\b0 Context\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 content\highlight13\cf12\b .\highlight15\cf14\b0 UriMatcher\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 database\highlight13\cf12\b .\highlight15\cf14\b0 Cursor\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 database\highlight13\cf12\b .\highlight15\cf14\b0 SQLException\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 database\highlight13\cf12\b .\highlight15\cf14\b0 sqlite\highlight13\cf12\b .\highlight15\cf14\b0 SQLiteDatabase\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 database\highlight13\cf12\b .\highlight15\cf14\b0 sqlite\highlight13\cf12\b .\highlight15\cf14\b0 SQLiteOpenHelper\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 database\highlight13\cf12\b .\highlight15\cf14\b0 sqlite\highlight13\cf12\b .\highlight15\cf14\b0 SQLiteQueryBuilder\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 net\highlight13\cf12\b .\highlight15\cf14\b0 Uri\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8\b import\highlight1\cf0\b0  \highlight15\cf14 android\highlight13\cf12\b .\highlight15\cf14\b0 util\highlight13\cf12\b .\highlight15\cf14\b0 Log\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+\highlight5\cf4 /**\par
+ * \highlight19\cf18\b @author\highlight5\cf4\b0  Jason Wei\par
+ * \par
+ */\highlight1\cf0 \par
+\highlight17\cf16 public\highlight1\cf0  \highlight17\cf16 class\highlight1\cf0  \highlight15\cf14 CitizenContentProvider\highlight1\cf0  \highlight9\cf8\b extends\highlight1\cf0\b0  \highlight15\cf14 ContentProvider\highlight1\cf0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight17\cf16 private\highlight1\cf0  \highlight17\cf16 static\highlight1\cf0  \highlight17\cf16 final\highlight1\cf0  \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 DATABASE_NAME\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight11\cf10 "citizens.db"\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight17\cf16 private\highlight1\cf0  \highlight17\cf16 static\highlight1\cf0  \highlight17\cf16 final\highlight1\cf0  \highlight17\cf16 int\highlight1\cf0  \highlight15\cf14 DATABASE_VERSION\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight17\cf16 public\highlight1\cf0  \highlight17\cf16 static\highlight1\cf0  \highlight17\cf16 final\highlight1\cf0  \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 AUTHORITY\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight11\cf10 "jwei.apps.dataforandroid.ch4.CitizenContentProvider"\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight17\cf16 private\highlight1\cf0  \highlight17\cf16 static\highlight1\cf0  \highlight17\cf16 final\highlight1\cf0  \highlight15\cf14 UriMatcher\highlight1\cf0  \highlight15\cf14 sUriMatcher\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight17\cf16 private\highlight1\cf0  \highlight17\cf16 static\highlight1\cf0  \highlight15\cf14 HashMap\highlight13\cf12\b <\highlight15\cf14\b0 String\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight13\cf12\b >\highlight1\cf0\b0  \highlight15\cf14 projectionMap\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight3\cf2 // URI MATCH OF A GENERAL CITIZENS QUERY\par
+\highlight1\cf0     \highlight17\cf16 private\highlight1\cf0  \highlight17\cf16 static\highlight1\cf0  \highlight17\cf16 final\highlight1\cf0  \highlight17\cf16 int\highlight1\cf0  \highlight15\cf14 CITIZENS\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight3\cf2 // URI MATCH OF A SPECIFIC CITIZEN QUERY\par
+\highlight1\cf0     \highlight17\cf16 private\highlight1\cf0  \highlight17\cf16 static\highlight1\cf0  \highlight17\cf16 final\highlight1\cf0  \highlight17\cf16 int\highlight1\cf0  \highlight15\cf14 SSID\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight7\cf6 2\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight17\cf16 private\highlight1\cf0  \highlight17\cf16 static\highlight1\cf0  \highlight17\cf16 class\highlight1\cf0  \highlight15\cf14 DatabaseHelper\highlight1\cf0  \highlight9\cf8\b extends\highlight1\cf0\b0  \highlight15\cf14 SQLiteOpenHelper\highlight1\cf0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 DatabaseHelper\highlight13\cf12\b (\highlight15\cf14\b0 Context\highlight1\cf0  \highlight15\cf14 context\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight9\cf8\b super\highlight13\cf12 (\highlight15\cf14\b0 context\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 DATABASE_NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight13\cf12 ,\highlight1\cf0\b0  \highlight15\cf14 DATABASE_VERSION\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 @Override\highlight1\cf0 \par
+        \highlight17\cf16 public\highlight1\cf0  \highlight17\cf16 void\highlight1\cf0  \highlight15\cf14 onCreate\highlight13\cf12\b (\highlight15\cf14\b0 SQLiteDatabase\highlight1\cf0  \highlight15\cf14 db\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight3\cf2 // CREATE INCOME TABLE\par
+\highlight1\cf0             \highlight15\cf14 db\highlight13\cf12\b .\highlight15\cf14\b0 execSQL\highlight13\cf12\b (\highlight11\cf10\b0 "CREATE TABLE "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " ("\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 ID\highlight1\cf0 \par
+                    \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " INTEGER PRIMARY KEY AUTOINCREMENT,"\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 NAME\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " TEXT,"\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 STATE\highlight1\cf0 \par
+                    \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " TEXT,"\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 INCOME\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " INTEGER);"\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 @Override\highlight1\cf0 \par
+        \highlight17\cf16 public\highlight1\cf0  \highlight17\cf16 void\highlight1\cf0  \highlight15\cf14 onUpgrade\highlight13\cf12\b (\highlight15\cf14\b0 SQLiteDatabase\highlight1\cf0  \highlight15\cf14 db\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight17\cf16 int\highlight1\cf0  \highlight15\cf14 oldVersion\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight17\cf16 int\highlight1\cf0  \highlight15\cf14 newVersion\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 Log\highlight13\cf12\b .\highlight15\cf14\b0 w\highlight13\cf12\b (\highlight11\cf10\b0 "LOG_TAG"\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight11\cf10 "Upgrading database from version "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 oldVersion\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " to "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 newVersion\highlight1\cf0 \par
+                    \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 ", which will destroy all old data"\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+            \highlight3\cf2 // KILL PREVIOUS TABLES IF UPGRADED\par
+\highlight1\cf0             \highlight15\cf14 db\highlight13\cf12\b .\highlight15\cf14\b0 execSQL\highlight13\cf12\b (\highlight11\cf10\b0 "DROP TABLE IF EXISTS "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+            \highlight3\cf2 // CREATE NEW INSTANCE OF SCHEMA\par
+\highlight1\cf0             \highlight15\cf14 onCreate\highlight13\cf12\b (\highlight15\cf14\b0 db\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight17\cf16 private\highlight1\cf0  \highlight15\cf14 DatabaseHelper\highlight1\cf0  \highlight15\cf14 dbHelper\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 @Override\highlight1\cf0 \par
+    \highlight17\cf16 public\highlight1\cf0  \highlight17\cf16 boolean\highlight1\cf0  \highlight15\cf14 onCreate\highlight13\cf12\b ()\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+        \highlight3\cf2 // HELPER DATABASE IS INITIALIZED\par
+\highlight1\cf0         \highlight15\cf14 dbHelper\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 DatabaseHelper\highlight13\cf12\b (\highlight15\cf14\b0 getContext\highlight13\cf12\b ());\highlight1\cf0\b0 \par
+        \highlight9\cf8\b return\highlight1\cf0\b0  \highlight9\cf8\b true\highlight13\cf12 ;\highlight1\cf0\b0 \par
+    \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 @Override\highlight1\cf0 \par
+    \highlight17\cf16 public\highlight1\cf0  \highlight17\cf16 int\highlight1\cf0  \highlight15\cf14 delete\highlight13\cf12\b (\highlight15\cf14\b0 Uri\highlight1\cf0  \highlight15\cf14 uri\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 where\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight13\cf12\b []\highlight1\cf0\b0  \highlight15\cf14 whereArgs\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+        \highlight15\cf14 SQLiteDatabase\highlight1\cf0  \highlight15\cf14 db\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 dbHelper\highlight13\cf12\b .\highlight15\cf14\b0 getWritableDatabase\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 int\highlight1\cf0  \highlight15\cf14 count\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+        \highlight9\cf8\b switch\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 sUriMatcher\highlight13\cf12\b .\highlight15\cf14\b0 match\highlight13\cf12\b (\highlight15\cf14\b0 uri\highlight13\cf12\b ))\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight9\cf8\b case\highlight1\cf0\b0  \highlight15\cf14 CITIZENS\highlight13\cf12\b :\highlight1\cf0\b0 \par
+                \highlight3\cf2 // PERFORM REGULAR DELETE\par
+\highlight1\cf0                 \highlight15\cf14 count\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 db\highlight13\cf12\b .\highlight15\cf14\b0 delete\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 where\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 whereArgs\highlight13\cf12\b );\highlight1\cf0\b0 \par
+                \highlight9\cf8\b break\highlight13\cf12 ;\highlight1\cf0\b0 \par
+            \highlight9\cf8\b case\highlight1\cf0\b0  \highlight15\cf14 SSID\highlight13\cf12\b :\highlight1\cf0\b0 \par
+                \highlight3\cf2 // FROM INCOMING URI GET SSID\par
+\highlight1\cf0                 \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 ssid\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b .\highlight15\cf14\b0 getPathSegments\highlight13\cf12\b ().\highlight15\cf14\b0 get\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 SSID_PATH_POSITION\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+                \highlight3\cf2 // HERE THE USER WANTS TO DELETE A SPECIFIC CITIZEN\par
+\highlight1\cf0                 \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 finalWhere\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 ID\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " = "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 ssid\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+                \highlight3\cf2 // IF USER SPECIFIES WHERE FILTER THEN APPEND TOGETHER\par
+\highlight1\cf0                 \highlight9\cf8\b if\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 where\highlight1\cf0  \highlight13\cf12\b !=\highlight1\cf0\b0  \highlight9\cf8\b null\highlight13\cf12 )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+                    \highlight15\cf14 finalWhere\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 finalWhere\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " AND "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 where\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+                \highlight15\cf14 count\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 db\highlight13\cf12\b .\highlight15\cf14\b0 delete\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 finalWhere\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 whereArgs\highlight13\cf12\b );\highlight1\cf0\b0 \par
+                \highlight9\cf8\b break\highlight13\cf12 ;\highlight1\cf0\b0 \par
+            \highlight9\cf8\b default\highlight13\cf12 :\highlight1\cf0\b0 \par
+                \highlight9\cf8\b throw\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 IllegalArgumentException\highlight13\cf12\b (\highlight11\cf10\b0 "Unknown URI "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 getContext\highlight13\cf12\b ().\highlight15\cf14\b0 getContentResolver\highlight13\cf12\b ().\highlight15\cf14\b0 notifyChange\highlight13\cf12\b (\highlight15\cf14\b0 uri\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight13\cf12 );\highlight1\cf0\b0 \par
+        \highlight9\cf8\b return\highlight1\cf0\b0  \highlight15\cf14 count\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 @Override\highlight1\cf0 \par
+    \highlight17\cf16 public\highlight1\cf0  \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 getType\highlight13\cf12\b (\highlight15\cf14\b0 Uri\highlight1\cf0  \highlight15\cf14 uri\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+        \highlight9\cf8\b switch\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 sUriMatcher\highlight13\cf12\b .\highlight15\cf14\b0 match\highlight13\cf12\b (\highlight15\cf14\b0 uri\highlight13\cf12\b ))\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight9\cf8\b case\highlight1\cf0\b0  \highlight15\cf14 CITIZENS\highlight13\cf12\b :\highlight1\cf0\b0 \par
+                \highlight9\cf8\b return\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 CONTENT_TYPE\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+            \highlight9\cf8\b case\highlight1\cf0\b0  \highlight15\cf14 SSID\highlight13\cf12\b :\highlight1\cf0\b0 \par
+                \highlight9\cf8\b return\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 CONTENT_ITEM_TYPE\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+            \highlight9\cf8\b default\highlight13\cf12 :\highlight1\cf0\b0 \par
+                \highlight9\cf8\b throw\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 IllegalArgumentException\highlight13\cf12\b (\highlight11\cf10\b0 "Unknown URI "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+    \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 @Override\highlight1\cf0 \par
+    \highlight17\cf16 public\highlight1\cf0  \highlight15\cf14 Uri\highlight1\cf0  \highlight15\cf14 insert\highlight13\cf12\b (\highlight15\cf14\b0 Uri\highlight1\cf0  \highlight15\cf14 uri\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 ContentValues\highlight1\cf0  \highlight15\cf14 initialValues\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+        \highlight3\cf2 // ONLY GENERAL CITIZENS URI IS ALLOWED FOR INSERTS\par
+\highlight1\cf0         \highlight3\cf2 // DOESN'T MAKE SENSE TO SPECIFY A SINGLE CITIZEN FOR INSERTS\par
+\highlight1\cf0         \highlight9\cf8\b if\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 sUriMatcher\highlight13\cf12\b .\highlight15\cf14\b0 match\highlight13\cf12\b (\highlight15\cf14\b0 uri\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b !=\highlight1\cf0\b0  \highlight15\cf14 CITIZENS\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0  \highlight9\cf8\b throw\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 IllegalArgumentException\highlight13\cf12\b (\highlight11\cf10\b0 "Unknown URI "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b );\highlight1\cf0\b0  \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 ContentValues\highlight1\cf0  \highlight15\cf14 values\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+        \highlight9\cf8\b if\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 initialValues\highlight1\cf0  \highlight13\cf12\b !=\highlight1\cf0\b0  \highlight9\cf8\b null\highlight13\cf12 )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 values\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 ContentValues\highlight13\cf12\b (\highlight15\cf14\b0 initialValues\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0  \highlight9\cf8\b else\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 values\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 ContentValues\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 SQLiteDatabase\highlight1\cf0  \highlight15\cf14 db\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 dbHelper\highlight13\cf12\b .\highlight15\cf14\b0 getWritableDatabase\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 long\highlight1\cf0  \highlight15\cf14 rowId\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 db\highlight13\cf12\b .\highlight15\cf14\b0 insert\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 values\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight9\cf8\b if\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 rowId\highlight1\cf0  \highlight13\cf12\b >\highlight1\cf0\b0  \highlight7\cf6 0\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 Uri\highlight1\cf0  \highlight15\cf14 citizenUri\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 ContentUris\highlight13\cf12\b .\highlight15\cf14\b0 withAppendedId\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 CONTENT_URI\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 rowId\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+            \highlight3\cf2 // NOTIFY CONTEXT OF THE CHANGE\par
+\highlight1\cf0             \highlight15\cf14 getContext\highlight13\cf12\b ().\highlight15\cf14\b0 getContentResolver\highlight13\cf12\b ().\highlight15\cf14\b0 notifyChange\highlight13\cf12\b (\highlight15\cf14\b0 citizenUri\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight13\cf12 );\highlight1\cf0\b0 \par
+            \highlight9\cf8\b return\highlight1\cf0\b0  \highlight15\cf14 citizenUri\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight9\cf8\b throw\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 SQLException\highlight13\cf12\b (\highlight11\cf10\b0 "Failed to insert row into "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b );\highlight1\cf0\b0 \par
+    \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 @Override\highlight1\cf0 \par
+    \highlight17\cf16 public\highlight1\cf0  \highlight15\cf14 Cursor\highlight1\cf0  \highlight15\cf14 query\highlight13\cf12\b (\highlight15\cf14\b0 Uri\highlight1\cf0  \highlight15\cf14 uri\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight13\cf12\b []\highlight1\cf0\b0  \highlight15\cf14 projection\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 selection\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight13\cf12\b []\highlight1\cf0\b0  \highlight15\cf14 selectionArgs\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 sortOrder\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+        \highlight15\cf14 SQLiteQueryBuilder\highlight1\cf0  \highlight15\cf14 qb\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 SQLiteQueryBuilder\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight9\cf8\b switch\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 sUriMatcher\highlight13\cf12\b .\highlight15\cf14\b0 match\highlight13\cf12\b (\highlight15\cf14\b0 uri\highlight13\cf12\b ))\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight9\cf8\b case\highlight1\cf0\b0  \highlight15\cf14 CITIZENS\highlight13\cf12\b :\highlight1\cf0\b0 \par
+                \highlight15\cf14 qb\highlight13\cf12\b .\highlight15\cf14\b0 setTables\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight13\cf12\b );\highlight1\cf0\b0 \par
+                \highlight15\cf14 qb\highlight13\cf12\b .\highlight15\cf14\b0 setProjectionMap\highlight13\cf12\b (\highlight15\cf14\b0 projectionMap\highlight13\cf12\b );\highlight1\cf0\b0 \par
+                \highlight9\cf8\b break\highlight13\cf12 ;\highlight1\cf0\b0 \par
+            \highlight9\cf8\b case\highlight1\cf0\b0  \highlight15\cf14 SSID\highlight13\cf12\b :\highlight1\cf0\b0 \par
+                \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 ssid\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b .\highlight15\cf14\b0 getPathSegments\highlight13\cf12\b ().\highlight15\cf14\b0 get\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 SSID_PATH_POSITION\highlight13\cf12\b );\highlight1\cf0\b0 \par
+                \highlight15\cf14 qb\highlight13\cf12\b .\highlight15\cf14\b0 setProjectionMap\highlight13\cf12\b (\highlight15\cf14\b0 projectionMap\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+                \highlight3\cf2 // APPEND WHERE FILTER FOR QUERYING BY SPECIFIC SSID\par
+\highlight1\cf0                 \highlight15\cf14 qb\highlight13\cf12\b .\highlight15\cf14\b0 appendWhere\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 ID\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 "="\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 ssid\highlight13\cf12\b );\highlight1\cf0\b0 \par
+                \highlight9\cf8\b break\highlight13\cf12 ;\highlight1\cf0\b0 \par
+            \highlight9\cf8\b default\highlight13\cf12 :\highlight1\cf0\b0 \par
+                \highlight9\cf8\b throw\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 IllegalArgumentException\highlight13\cf12\b (\highlight11\cf10\b0 "Unknown URI "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 SQLiteDatabase\highlight1\cf0  \highlight15\cf14 db\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 dbHelper\highlight13\cf12\b .\highlight15\cf14\b0 getReadableDatabase\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight15\cf14 Cursor\highlight1\cf0  \highlight15\cf14 c\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 qb\highlight13\cf12\b .\highlight15\cf14\b0 query\highlight13\cf12\b (\highlight15\cf14\b0 db\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 projection\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 selection\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 selectionArgs\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight13\cf12 ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight13\cf12 ,\highlight1\cf0\b0  \highlight15\cf14 sortOrder\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // REGISTERS NOTIFICATION LISTENER WITH GIVEN CURSOR\par
+\highlight1\cf0         \highlight3\cf2 // ALLOWS CURSOR TO KNOW WHEN UNDERLYING DATA HAS CHANGED\par
+\highlight1\cf0         \highlight15\cf14 c\highlight13\cf12\b .\highlight15\cf14\b0 setNotificationUri\highlight13\cf12\b (\highlight15\cf14\b0 getContext\highlight13\cf12\b ().\highlight15\cf14\b0 getContentResolver\highlight13\cf12\b (),\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight9\cf8\b return\highlight1\cf0\b0  \highlight15\cf14 c\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight15\cf14 @Override\highlight1\cf0 \par
+    \highlight17\cf16 public\highlight1\cf0  \highlight17\cf16 int\highlight1\cf0  \highlight15\cf14 update\highlight13\cf12\b (\highlight15\cf14\b0 Uri\highlight1\cf0  \highlight15\cf14 uri\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 ContentValues\highlight1\cf0  \highlight15\cf14 values\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 where\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight13\cf12\b []\highlight1\cf0\b0  \highlight15\cf14 whereArgs\highlight13\cf12\b )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+        \highlight15\cf14 SQLiteDatabase\highlight1\cf0  \highlight15\cf14 db\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 dbHelper\highlight13\cf12\b .\highlight15\cf14\b0 getWritableDatabase\highlight13\cf12\b ();\highlight1\cf0\b0 \par
+        \highlight17\cf16 int\highlight1\cf0  \highlight15\cf14 count\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+        \highlight9\cf8\b switch\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 sUriMatcher\highlight13\cf12\b .\highlight15\cf14\b0 match\highlight13\cf12\b (\highlight15\cf14\b0 uri\highlight13\cf12\b ))\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+            \highlight9\cf8\b case\highlight1\cf0\b0  \highlight15\cf14 CITIZENS\highlight13\cf12\b :\highlight1\cf0\b0 \par
+                \highlight3\cf2 // GENERAL UPDATE ON ALL CITIZENS\par
+\highlight1\cf0                 \highlight15\cf14 count\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 db\highlight13\cf12\b .\highlight15\cf14\b0 update\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 values\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 where\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 whereArgs\highlight13\cf12\b );\highlight1\cf0\b0 \par
+                \highlight9\cf8\b break\highlight13\cf12 ;\highlight1\cf0\b0 \par
+            \highlight9\cf8\b case\highlight1\cf0\b0  \highlight15\cf14 SSID\highlight13\cf12\b :\highlight1\cf0\b0 \par
+                \highlight3\cf2 // FROM INCOMING URI GET SSID\par
+\highlight1\cf0                 \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 ssid\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b .\highlight15\cf14\b0 getPathSegments\highlight13\cf12\b ().\highlight15\cf14\b0 get\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 SSID_PATH_POSITION\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+                \highlight3\cf2 // HERE THE USER WANTS TO UPDATE A SPECIFIC CITIZEN\par
+\highlight1\cf0                 \highlight15\cf14 String\highlight1\cf0  \highlight15\cf14 finalWhere\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 ID\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " = "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 ssid\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+\par
+                \highlight9\cf8\b if\highlight1\cf0\b0  \highlight13\cf12\b (\highlight15\cf14\b0 where\highlight1\cf0  \highlight13\cf12\b !=\highlight1\cf0\b0  \highlight9\cf8\b null\highlight13\cf12 )\highlight1\cf0\b0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+                    \highlight15\cf14 finalWhere\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 finalWhere\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight11\cf10 " AND "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 where\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+                \highlight3\cf2 // PERFORM THE UPDATE ON THE SPECIFIC CITIZEN\par
+\highlight1\cf0                 \highlight15\cf14 count\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight15\cf14 db\highlight13\cf12\b .\highlight15\cf14\b0 update\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 values\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 finalWhere\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 whereArgs\highlight13\cf12\b );\highlight1\cf0\b0 \par
+                \highlight9\cf8\b break\highlight13\cf12 ;\highlight1\cf0\b0 \par
+            \highlight9\cf8\b default\highlight13\cf12 :\highlight1\cf0\b0 \par
+                \highlight9\cf8\b throw\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 IllegalArgumentException\highlight13\cf12\b (\highlight11\cf10\b0 "Unknown URI "\highlight1\cf0  \highlight13\cf12\b +\highlight1\cf0\b0  \highlight15\cf14 uri\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight15\cf14 getContext\highlight13\cf12\b ().\highlight15\cf14\b0 getContentResolver\highlight13\cf12\b ().\highlight15\cf14\b0 notifyChange\highlight13\cf12\b (\highlight15\cf14\b0 uri\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight9\cf8\b null\highlight13\cf12 );\highlight1\cf0\b0 \par
+        \highlight9\cf8\b return\highlight1\cf0\b0  \highlight15\cf14 count\highlight13\cf12\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight3\cf2 // INSTANTIATE AND SET STATIC VARIABLES\par
+\highlight1\cf0     \highlight17\cf16 static\highlight1\cf0  \highlight13\cf12\b \{\highlight1\cf0\b0 \par
+        \highlight15\cf14 sUriMatcher\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 UriMatcher\highlight13\cf12\b (\highlight15\cf14\b0 UriMatcher\highlight13\cf12\b .\highlight15\cf14\b0 NO_MATCH\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 sUriMatcher\highlight13\cf12\b .\highlight15\cf14\b0 addURI\highlight13\cf12\b (\highlight15\cf14\b0 AUTHORITY\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 CITIZENS\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 sUriMatcher\highlight13\cf12\b .\highlight15\cf14\b0 addURI\highlight13\cf12\b (\highlight15\cf14\b0 AUTHORITY\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 TABLE_NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 SSID\highlight13\cf12\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // PROJECTION MAP USED FOR ROW ALIAS\par
+\highlight1\cf0         \highlight15\cf14 projectionMap\highlight1\cf0  \highlight13\cf12\b =\highlight1\cf0\b0  \highlight9\cf8\b new\highlight1\cf0\b0  \highlight15\cf14 HashMap\highlight13\cf12\b <\highlight15\cf14\b0 String\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 String\highlight13\cf12\b >();\highlight1\cf0\b0 \par
+        \highlight15\cf14 projectionMap\highlight13\cf12\b .\highlight15\cf14\b0 put\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 ID\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 ID\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 projectionMap\highlight13\cf12\b .\highlight15\cf14\b0 put\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 NAME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 NAME\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 projectionMap\highlight13\cf12\b .\highlight15\cf14\b0 put\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 STATE\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 STATE\highlight13\cf12\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 projectionMap\highlight13\cf12\b .\highlight15\cf14\b0 put\highlight13\cf12\b (\highlight15\cf14\b0 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 INCOME\highlight13\cf12\b ,\highlight1\cf0\b0  \highlight15\cf14 CitizenTable\highlight13\cf12\b .\highlight15\cf14\b0 INCOME\highlight13\cf12\b );\highlight1\cf0\b0 \par
+    \highlight13\cf12\b \}\highlight1\cf0\b0 \par
+\highlight13\cf12\b \}\highlight1\cf0\b0 \par
+}

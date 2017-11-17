@@ -1,0 +1,110 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+{\f008 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f33\fs20\cb17\cf16 \highlight15\cf14 package\highlight1\cf0  \highlight13\cf12 jwei\highlight11\cf10\b .\highlight13\cf12\b0 apps\highlight11\cf10\b .\highlight13\cf12\b0 dataforandroid\highlight11\cf10\b .\highlight13\cf12\b0 ch2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 java\highlight11\cf10\b .\highlight13\cf12\b0 util\highlight11\cf10\b .\highlight13\cf12\b0 Set\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 jwei\highlight11\cf10\b .\highlight13\cf12\b0 apps\highlight11\cf10\b .\highlight13\cf12\b0 dataforandroid\highlight11\cf10\b .\highlight13\cf12\b0 R\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 app\highlight11\cf10\b .\highlight13\cf12\b0 Activity\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 database\highlight11\cf10\b .\highlight13\cf12\b0 Cursor\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 os\highlight11\cf10\b .\highlight13\cf12\b0 Bundle\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 class\highlight1\cf0  \highlight13\cf12 SchemaActivity\highlight1\cf0  \highlight7\cf6\b extends\highlight1\cf0\b0  \highlight13\cf12 Activity\highlight1\cf0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight13\cf12 @Override\highlight1\cf0 \par
+    \highlight15\cf14 protected\highlight1\cf0  \highlight15\cf14 void\highlight1\cf0  \highlight13\cf12 onCreate\highlight11\cf10\b (\highlight13\cf12\b0 Bundle\highlight1\cf0  \highlight13\cf12 savedInstanceState\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight7\cf6\b super\highlight11\cf10 .\highlight13\cf12\b0 onCreate\highlight11\cf10\b (\highlight13\cf12\b0 savedInstanceState\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 setContentView\highlight11\cf10\b (\highlight13\cf12\b0 R\highlight11\cf10\b .\highlight13\cf12\b0 layout\highlight11\cf10\b .\highlight13\cf12\b0 main\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 SchemaHelper\highlight1\cf0  \highlight13\cf12 sh\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 SchemaHelper\highlight11\cf10\b (\highlight7\cf6 this\highlight11\cf10 );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // ADD STUDENTS AND RETURN THEIR IDS\par
+\highlight1\cf0         \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 sid1\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 addStudent\highlight11\cf10\b (\highlight9\cf8\b0 "Jason Wei"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "IL"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 12\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 sid2\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 addStudent\highlight11\cf10\b (\highlight9\cf8\b0 "Du Chung"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "AR"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 12\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 sid3\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 addStudent\highlight11\cf10\b (\highlight9\cf8\b0 "George Tang"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "CA"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 11\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 sid4\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 addStudent\highlight11\cf10\b (\highlight9\cf8\b0 "Mark Bocanegra"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "CA"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 11\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 sid5\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 addStudent\highlight11\cf10\b (\highlight9\cf8\b0 "Bobby Wei"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "IL"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 12\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // ADD COURSES AND RETURN THEIR IDS\par
+\highlight1\cf0         \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 cid1\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 addCourse\highlight11\cf10\b (\highlight9\cf8\b0 "Math51"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 cid2\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 addCourse\highlight11\cf10\b (\highlight9\cf8\b0 "CS106A"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight15\cf14 long\highlight1\cf0  \highlight13\cf12 cid3\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 addCourse\highlight11\cf10\b (\highlight9\cf8\b0 "Econ1A"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // ENROLL STUDENTS IN CLASSES\par
+\highlight1\cf0         \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 enrollStudentClass\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 sid1\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight11\cf10\b (\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid1\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 enrollStudentClass\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 sid1\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight11\cf10\b (\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid2\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 enrollStudentClass\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 sid2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight11\cf10\b (\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid2\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 enrollStudentClass\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 sid3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight11\cf10\b (\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid1\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 enrollStudentClass\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 sid3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight11\cf10\b (\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid2\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 enrollStudentClass\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 sid4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight11\cf10\b (\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid3\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 enrollStudentClass\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 sid5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight11\cf10\b (\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid2\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // GET STUDENTS FOR COURSE\par
+\highlight1\cf0         \highlight13\cf12 Cursor\highlight1\cf0  \highlight13\cf12 c\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 getStudentsForCourse\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid2\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b while\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 moveToNext\highlight11\cf10\b ())\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 sid\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getInt\highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 getColumnIndex\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 STUDENT_ID\highlight11\cf10\b ));\highlight1\cf0\b0 \par
+            \highlight13\cf12 System\highlight11\cf10\b .\highlight13\cf12\b0 out\highlight11\cf10\b .\highlight13\cf12\b0 println\highlight11\cf10\b (\highlight9\cf8\b0 "STUDENT "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 sid\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " IS ENROLLED IN COURSE "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 cid2\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // GET STUDENTS FOR COURSE AND FILTER BY GRADE\par
+\highlight1\cf0         \highlight13\cf12 Set\highlight11\cf10\b <\highlight13\cf12\b0 Integer\highlight11\cf10\b >\highlight1\cf0\b0  \highlight13\cf12 sids\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 getStudentsByGradeForCourse\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 11\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b for\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 Integer\highlight1\cf0  \highlight13\cf12 sid\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight13\cf12 sids\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight13\cf12 System\highlight11\cf10\b .\highlight13\cf12\b0 out\highlight11\cf10\b .\highlight13\cf12\b0 println\highlight11\cf10\b (\highlight9\cf8\b0 "STUDENT "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 sid\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " OF GRADE 11 IS ENROLLED IN COURSE "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 cid2\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // GET CLASSES IM TAKING\par
+\highlight1\cf0         \highlight13\cf12 c\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 getCoursesForStudent\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 sid1\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b while\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 moveToNext\highlight11\cf10\b ())\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 cid\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getInt\highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 getColumnIndex\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 COURSE_ID\highlight11\cf10\b ));\highlight1\cf0\b0 \par
+            \highlight13\cf12 System\highlight11\cf10\b .\highlight13\cf12\b0 out\highlight11\cf10\b .\highlight13\cf12\b0 println\highlight11\cf10\b (\highlight9\cf8\b0 "STUDENT "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 sid1\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " IS ENROLLED IN COURSE "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 cid\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // TRY REMOVING A CLASS\par
+\highlight1\cf0         \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 removeCourse\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 cid1\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \par
+        \highlight13\cf12 System\highlight11\cf10\b .\highlight13\cf12\b0 out\highlight11\cf10\b .\highlight13\cf12\b0 println\highlight11\cf10\b (\highlight9\cf8\b0 "------------------------------"\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // SEE IF REMOVAL KEPT SCHEMA CONSISTENT\par
+\highlight1\cf0         \highlight13\cf12 c\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sh\highlight11\cf10\b .\highlight13\cf12\b0 getCoursesForStudent\highlight11\cf10\b ((\highlight15\cf14\b0 int\highlight11\cf10\b )\highlight1\cf0\b0  \highlight13\cf12 sid1\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight7\cf6\b while\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 moveToNext\highlight11\cf10\b ())\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 cid\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 c\highlight11\cf10\b .\highlight13\cf12\b0 getInt\highlight11\cf10\b (\highlight13\cf12\b0 c\highlight11\cf10\b .\highlight13\cf12\b0 getColumnIndex\highlight11\cf10\b (\highlight13\cf12\b0 ClassTable\highlight11\cf10\b .\highlight13\cf12\b0 COURSE_ID\highlight11\cf10\b ));\highlight1\cf0\b0 \par
+            \highlight13\cf12 System\highlight11\cf10\b .\highlight13\cf12\b0 out\highlight11\cf10\b .\highlight13\cf12\b0 println\highlight11\cf10\b (\highlight9\cf8\b0 "STUDENT "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 sid1\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight9\cf8 " IS ENROLLED IN COURSE "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 cid\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+\highlight11\cf10\b \}\highlight1\cf0\b0 \par
+}

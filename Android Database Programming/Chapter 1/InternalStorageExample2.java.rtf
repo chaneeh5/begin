@@ -1,0 +1,81 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+{\f008 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f33\fs20\cb17\cf16 \highlight15\cf14 package\highlight1\cf0  \highlight13\cf12 jwei\highlight11\cf10\b .\highlight13\cf12\b0 apps\highlight11\cf10\b .\highlight13\cf12\b0 dataforandroid\highlight11\cf10\b .\highlight13\cf12\b0 ch1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 java\highlight11\cf10\b .\highlight13\cf12\b0 io\highlight11\cf10\b .\highlight13\cf12\b0 FileInputStream\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 java\highlight11\cf10\b .\highlight13\cf12\b0 io\highlight11\cf10\b .\highlight13\cf12\b0 IOException\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 java\highlight11\cf10\b .\highlight13\cf12\b0 io\highlight11\cf10\b .\highlight13\cf12\b0 InputStreamReader\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 jwei\highlight11\cf10\b .\highlight13\cf12\b0 apps\highlight11\cf10\b .\highlight13\cf12\b0 dataforandroid\highlight11\cf10\b .\highlight13\cf12\b0 R\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 app\highlight11\cf10\b .\highlight13\cf12\b0 Activity\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 os\highlight11\cf10\b .\highlight13\cf12\b0 Bundle\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight7\cf6\b import\highlight1\cf0\b0  \highlight13\cf12 android\highlight11\cf10\b .\highlight13\cf12\b0 util\highlight11\cf10\b .\highlight13\cf12\b0 Log\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight15\cf14 public\highlight1\cf0  \highlight15\cf14 class\highlight1\cf0  \highlight13\cf12 InternalStorageExample2\highlight1\cf0  \highlight7\cf6\b extends\highlight1\cf0\b0  \highlight13\cf12 Activity\highlight1\cf0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight13\cf12 @Override\highlight1\cf0 \par
+    \highlight15\cf14 protected\highlight1\cf0  \highlight15\cf14 void\highlight1\cf0  \highlight13\cf12 onCreate\highlight11\cf10\b (\highlight13\cf12\b0 Bundle\highlight1\cf0  \highlight13\cf12 savedInstanceState\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+        \highlight7\cf6\b super\highlight11\cf10 .\highlight13\cf12\b0 onCreate\highlight11\cf10\b (\highlight13\cf12\b0 savedInstanceState\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight13\cf12 setContentView\highlight11\cf10\b (\highlight13\cf12\b0 R\highlight11\cf10\b .\highlight13\cf12\b0 layout\highlight11\cf10\b .\highlight13\cf12\b0 main\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // THE NAME OF THE FILE\par
+\highlight1\cf0         \highlight13\cf12 String\highlight1\cf0  \highlight13\cf12 fileName\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight9\cf8 "my_file.txt"\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+        \highlight7\cf6\b try\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight13\cf12 FileInputStream\highlight1\cf0  \highlight13\cf12 fis\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 openFileInput\highlight11\cf10\b (\highlight13\cf12\b0 fileName\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight13\cf12 InputStreamReader\highlight1\cf0  \highlight13\cf12 isr\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 InputStreamReader\highlight11\cf10\b (\highlight13\cf12\b0 fis\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+            \highlight3\cf2 // READ STRING OF UNKNOWN LENGTH\par
+\highlight1\cf0             \highlight13\cf12 StringBuilder\highlight1\cf0  \highlight13\cf12 sb\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight13\cf12 StringBuilder\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+            \highlight15\cf14 char\highlight11\cf10\b []\highlight1\cf0\b0  \highlight13\cf12 inputBuffer\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6\b new\highlight1\cf0\b0  \highlight15\cf14 char\highlight11\cf10\b [\highlight5\cf4\b0 2048\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+            \highlight15\cf14 int\highlight1\cf0  \highlight13\cf12 l\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+            \highlight3\cf2 // FILL BUFFER WITH DATA\par
+\highlight1\cf0             \highlight7\cf6\b while\highlight1\cf0\b0  \highlight11\cf10\b ((\highlight13\cf12\b0 l\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 isr\highlight11\cf10\b .\highlight13\cf12\b0 read\highlight11\cf10\b (\highlight13\cf12\b0 inputBuffer\highlight11\cf10\b ))\highlight1\cf0\b0  \highlight11\cf10\b !=\highlight1\cf0\b0  \highlight11\cf10\b -\highlight5\cf4\b0 1\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+                \highlight13\cf12 sb\highlight11\cf10\b .\highlight13\cf12\b0 append\highlight11\cf10\b (\highlight13\cf12\b0 inputBuffer\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight5\cf4 0\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 l\highlight11\cf10\b );\highlight1\cf0\b0 \par
+            \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\par
+            \highlight3\cf2 // CONVERT BYTES TO STRING\par
+\highlight1\cf0             \highlight13\cf12 String\highlight1\cf0  \highlight13\cf12 readString\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sb\highlight11\cf10\b .\highlight13\cf12\b0 toString\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+            \highlight13\cf12 Log\highlight11\cf10\b .\highlight13\cf12\b0 i\highlight11\cf10\b (\highlight9\cf8\b0 "LOG_TAG"\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight9\cf8 "Read string: "\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 readString\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+            \highlight3\cf2 // CAN ALSO DELETE THE FILE\par
+\highlight1\cf0             \highlight13\cf12 deleteFile\highlight11\cf10\b (\highlight13\cf12\b0 fileName\highlight11\cf10\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0  \highlight7\cf6\b catch\highlight1\cf0\b0  \highlight11\cf10\b (\highlight13\cf12\b0 IOException\highlight1\cf0  \highlight13\cf12 e\highlight11\cf10\b )\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight1\cf0\b0 \par
+            \highlight13\cf12 e\highlight11\cf10\b .\highlight13\cf12\b0 printStackTrace\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+        \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+    \highlight11\cf10\b \}\highlight1\cf0\b0 \par
+\highlight11\cf10\b \}\highlight1\cf0\b0 \par
+}

@@ -1,0 +1,67 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f33\fs20\cb15\cf14 \highlight13\cf12 package\highlight1\cf0  \highlight11\cf10 jwei\highlight9\cf8\b .\highlight11\cf10\b0 apps\highlight9\cf8\b .\highlight11\cf10\b0 dataforandroid\highlight9\cf8\b .\highlight11\cf10\b0 ch1\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 java\highlight9\cf8\b .\highlight11\cf10\b0 io\highlight9\cf8\b .\highlight11\cf10\b0 FileOutputStream\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 java\highlight9\cf8\b .\highlight11\cf10\b0 io\highlight9\cf8\b .\highlight11\cf10\b0 IOException\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 jwei\highlight9\cf8\b .\highlight11\cf10\b0 apps\highlight9\cf8\b .\highlight11\cf10\b0 dataforandroid\highlight9\cf8\b .\highlight11\cf10\b0 R\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 app\highlight9\cf8\b .\highlight11\cf10\b0 Activity\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 content\highlight9\cf8\b .\highlight11\cf10\b0 Context\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 os\highlight9\cf8\b .\highlight11\cf10\b0 Bundle\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+\highlight13\cf12 public\highlight1\cf0  \highlight13\cf12 class\highlight1\cf0  \highlight11\cf10 InternalStorageExample\highlight1\cf0  \highlight5\cf4\b extends\highlight1\cf0\b0  \highlight11\cf10 Activity\highlight1\cf0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight11\cf10 @Override\highlight1\cf0 \par
+    \highlight13\cf12 protected\highlight1\cf0  \highlight13\cf12 void\highlight1\cf0  \highlight11\cf10 onCreate\highlight9\cf8\b (\highlight11\cf10\b0 Bundle\highlight1\cf0  \highlight11\cf10 savedInstanceState\highlight9\cf8\b )\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+        \highlight5\cf4\b super\highlight9\cf8 .\highlight11\cf10\b0 onCreate\highlight9\cf8\b (\highlight11\cf10\b0 savedInstanceState\highlight9\cf8\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10 setContentView\highlight9\cf8\b (\highlight11\cf10\b0 R\highlight9\cf8\b .\highlight11\cf10\b0 layout\highlight9\cf8\b .\highlight11\cf10\b0 main\highlight9\cf8\b );\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // THE NAME OF THE FILE\par
+\highlight1\cf0         \highlight11\cf10 String\highlight1\cf0  \highlight11\cf10 fileName\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight7\cf6 "my_file.txt"\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+        \highlight3\cf2 // STRING TO BE WRITTEN TO FILE\par
+\highlight1\cf0         \highlight11\cf10 String\highlight1\cf0  \highlight11\cf10 msg\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight7\cf6 "Hello World."\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+        \highlight5\cf4\b try\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+            \highlight3\cf2 // CREATE THE FILE AND WRITE\par
+\highlight1\cf0             \highlight11\cf10 FileOutputStream\highlight1\cf0  \highlight11\cf10 fos\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight11\cf10 openFileOutput\highlight9\cf8\b (\highlight11\cf10\b0 fileName\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight11\cf10 Context\highlight9\cf8\b .\highlight11\cf10\b0 MODE_PRIVATE\highlight9\cf8\b );\highlight1\cf0\b0 \par
+            \highlight11\cf10 fos\highlight9\cf8\b .\highlight11\cf10\b0 write\highlight9\cf8\b (\highlight11\cf10\b0 msg\highlight9\cf8\b .\highlight11\cf10\b0 getBytes\highlight9\cf8\b ());\highlight1\cf0\b0 \par
+            \highlight11\cf10 fos\highlight9\cf8\b .\highlight11\cf10\b0 close\highlight9\cf8\b ();\highlight1\cf0\b0 \par
+        \highlight9\cf8\b \}\highlight1\cf0\b0  \highlight5\cf4\b catch\highlight1\cf0\b0  \highlight9\cf8\b (\highlight11\cf10\b0 IOException\highlight1\cf0  \highlight11\cf10 e\highlight9\cf8\b )\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+            \highlight11\cf10 e\highlight9\cf8\b .\highlight11\cf10\b0 printStackTrace\highlight9\cf8\b ();\highlight1\cf0\b0 \par
+        \highlight9\cf8\b \}\highlight1\cf0\b0 \par
+\par
+    \highlight9\cf8\b \}\highlight1\cf0\b0 \par
+\par
+\highlight9\cf8\b \}\highlight1\cf0\b0 \par
+}

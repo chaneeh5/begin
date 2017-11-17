@@ -1,0 +1,91 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f33\fs20\cb15\cf14 \highlight13\cf12 package\highlight1\cf0  \highlight11\cf10 jwei\highlight9\cf8\b .\highlight11\cf10\b0 apps\highlight9\cf8\b .\highlight11\cf10\b0 dataforandroid\highlight9\cf8\b .\highlight11\cf10\b0 ch1\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 java\highlight9\cf8\b .\highlight11\cf10\b0 io\highlight9\cf8\b .\highlight11\cf10\b0 BufferedWriter\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 java\highlight9\cf8\b .\highlight11\cf10\b0 io\highlight9\cf8\b .\highlight11\cf10\b0 File\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 java\highlight9\cf8\b .\highlight11\cf10\b0 io\highlight9\cf8\b .\highlight11\cf10\b0 FileWriter\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 java\highlight9\cf8\b .\highlight11\cf10\b0 io\highlight9\cf8\b .\highlight11\cf10\b0 IOException\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 jwei\highlight9\cf8\b .\highlight11\cf10\b0 apps\highlight9\cf8\b .\highlight11\cf10\b0 dataforandroid\highlight9\cf8\b .\highlight11\cf10\b0 R\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 app\highlight9\cf8\b .\highlight11\cf10\b0 Activity\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 os\highlight9\cf8\b .\highlight11\cf10\b0 Bundle\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 os\highlight9\cf8\b .\highlight11\cf10\b0 Environment\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4\b import\highlight1\cf0\b0  \highlight11\cf10 android\highlight9\cf8\b .\highlight11\cf10\b0 util\highlight9\cf8\b .\highlight11\cf10\b0 Log\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+\highlight13\cf12 public\highlight1\cf0  \highlight13\cf12 class\highlight1\cf0  \highlight11\cf10 ExternalStorageExample\highlight1\cf0  \highlight5\cf4\b extends\highlight1\cf0\b0  \highlight11\cf10 Activity\highlight1\cf0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+\par
+    \highlight11\cf10 @Override\highlight1\cf0 \par
+    \highlight13\cf12 protected\highlight1\cf0  \highlight13\cf12 void\highlight1\cf0  \highlight11\cf10 onCreate\highlight9\cf8\b (\highlight11\cf10\b0 Bundle\highlight1\cf0  \highlight11\cf10 savedInstanceState\highlight9\cf8\b )\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+        \highlight5\cf4\b super\highlight9\cf8 .\highlight11\cf10\b0 onCreate\highlight9\cf8\b (\highlight11\cf10\b0 savedInstanceState\highlight9\cf8\b );\highlight1\cf0\b0 \par
+        \highlight11\cf10 setContentView\highlight9\cf8\b (\highlight11\cf10\b0 R\highlight9\cf8\b .\highlight11\cf10\b0 layout\highlight9\cf8\b .\highlight11\cf10\b0 main\highlight9\cf8\b );\highlight1\cf0\b0 \par
+\par
+        \highlight11\cf10 String\highlight1\cf0  \highlight11\cf10 fileName\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight7\cf6 "my_file.txt"\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+        \highlight11\cf10 String\highlight1\cf0  \highlight11\cf10 msg\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight7\cf6 "Hello World."\highlight9\cf8\b ;\highlight1\cf0\b0 \par
+\par
+        \highlight13\cf12 boolean\highlight1\cf0  \highlight11\cf10 externalAvailable\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight5\cf4\b false\highlight9\cf8 ;\highlight1\cf0\b0 \par
+        \highlight13\cf12 boolean\highlight1\cf0  \highlight11\cf10 externalWriteable\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight5\cf4\b false\highlight9\cf8 ;\highlight1\cf0\b0 \par
+        \highlight11\cf10 String\highlight1\cf0  \highlight11\cf10 state\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight11\cf10 Environment\highlight9\cf8\b .\highlight11\cf10\b0 getExternalStorageState\highlight9\cf8\b ();\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4\b if\highlight1\cf0\b0  \highlight9\cf8\b (\highlight11\cf10\b0 state\highlight9\cf8\b .\highlight11\cf10\b0 equals\highlight9\cf8\b (\highlight11\cf10\b0 Environment\highlight9\cf8\b .\highlight11\cf10\b0 MEDIA_MOUNTED\highlight9\cf8\b ))\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+            \highlight3\cf2 // HERE MEDIA IS BOTH AVAILABLE AND WRITEABLE\par
+\highlight1\cf0             \highlight11\cf10 externalAvailable\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight5\cf4\b true\highlight9\cf8 ;\highlight1\cf0\b0 \par
+            \highlight11\cf10 externalWriteable\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight5\cf4\b true\highlight9\cf8 ;\highlight1\cf0\b0 \par
+        \highlight9\cf8\b \}\highlight1\cf0\b0  \highlight5\cf4\b else\highlight1\cf0\b0  \highlight5\cf4\b if\highlight1\cf0\b0  \highlight9\cf8\b (\highlight11\cf10\b0 state\highlight9\cf8\b .\highlight11\cf10\b0 equals\highlight9\cf8\b (\highlight11\cf10\b0 Environment\highlight9\cf8\b .\highlight11\cf10\b0 MEDIA_MOUNTED_READ_ONLY\highlight9\cf8\b ))\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+            \highlight3\cf2 // HERE SD CARD IS AVAILABLE BUT NOT WRITEABLE\par
+\highlight1\cf0             \highlight11\cf10 externalAvailable\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight5\cf4\b true\highlight9\cf8 ;\highlight1\cf0\b0 \par
+        \highlight9\cf8\b \}\highlight1\cf0\b0  \highlight5\cf4\b else\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+            \highlight3\cf2 // HERE FAILURE COULD BE RESULT OF MANY SITUATIONS\par
+\highlight1\cf0             \highlight3\cf2 // NO OP\par
+\highlight1\cf0         \highlight9\cf8\b \}\highlight1\cf0\b0 \par
+\par
+        \highlight5\cf4\b if\highlight1\cf0\b0  \highlight9\cf8\b (\highlight11\cf10\b0 externalAvailable\highlight1\cf0  \highlight9\cf8\b &&\highlight1\cf0\b0  \highlight11\cf10 externalWriteable\highlight9\cf8\b )\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+            \highlight3\cf2 // FOR API LEVEL 7 AND BELOW - RETRIEVE SD CARD DIRECTORY\par
+\highlight1\cf0             \highlight11\cf10 File\highlight1\cf0  \highlight11\cf10 root\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight11\cf10 Environment\highlight9\cf8\b .\highlight11\cf10\b0 getExternalStorageDirectory\highlight9\cf8\b ();\highlight1\cf0\b0 \par
+            \highlight11\cf10 File\highlight1\cf0  \highlight11\cf10 f\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight5\cf4\b new\highlight1\cf0\b0  \highlight11\cf10 File\highlight9\cf8\b (\highlight11\cf10\b0 root\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight11\cf10 fileName\highlight9\cf8\b );\highlight1\cf0\b0 \par
+            \highlight5\cf4\b try\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+                \highlight3\cf2 // NOTE THIS IS DIFFERENT FROM INTERNAL STORAGE WRITER\par
+\highlight1\cf0                 \highlight11\cf10 FileWriter\highlight1\cf0  \highlight11\cf10 fWriter\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight5\cf4\b new\highlight1\cf0\b0  \highlight11\cf10 FileWriter\highlight9\cf8\b (\highlight11\cf10\b0 f\highlight9\cf8\b );\highlight1\cf0\b0 \par
+                \highlight11\cf10 BufferedWriter\highlight1\cf0  \highlight11\cf10 out\highlight1\cf0  \highlight9\cf8\b =\highlight1\cf0\b0  \highlight5\cf4\b new\highlight1\cf0\b0  \highlight11\cf10 BufferedWriter\highlight9\cf8\b (\highlight11\cf10\b0 fWriter\highlight9\cf8\b );\highlight1\cf0\b0 \par
+                \highlight11\cf10 out\highlight9\cf8\b .\highlight11\cf10\b0 write\highlight9\cf8\b (\highlight11\cf10\b0 msg\highlight9\cf8\b );\highlight1\cf0\b0 \par
+                \highlight11\cf10 out\highlight9\cf8\b .\highlight11\cf10\b0 close\highlight9\cf8\b ();\highlight1\cf0\b0 \par
+            \highlight9\cf8\b \}\highlight1\cf0\b0  \highlight5\cf4\b catch\highlight1\cf0\b0  \highlight9\cf8\b (\highlight11\cf10\b0 IOException\highlight1\cf0  \highlight11\cf10 e\highlight9\cf8\b )\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+                \highlight11\cf10 e\highlight9\cf8\b .\highlight11\cf10\b0 printStackTrace\highlight9\cf8\b ();\highlight1\cf0\b0 \par
+            \highlight9\cf8\b \}\highlight1\cf0\b0 \par
+        \highlight9\cf8\b \}\highlight1\cf0\b0  \highlight5\cf4\b else\highlight1\cf0\b0  \highlight9\cf8\b \{\highlight1\cf0\b0 \par
+            \highlight11\cf10 Log\highlight9\cf8\b .\highlight11\cf10\b0 e\highlight9\cf8\b (\highlight7\cf6\b0 "LOG_TAG"\highlight9\cf8\b ,\highlight1\cf0\b0  \highlight7\cf6 "SD CARD UNAVAILABLE"\highlight9\cf8\b );\highlight1\cf0\b0 \par
+        \highlight9\cf8\b \}\highlight1\cf0\b0 \par
+    \highlight9\cf8\b \}\highlight1\cf0\b0 \par
+\par
+\highlight9\cf8\b \}\highlight1\cf0\b0 \par
+}
