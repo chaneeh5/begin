@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableRow>
+        <ImageButton android:id="@+id/imagebutton0"
+            android:src="@drawable/android_cupcake"
+            android:scaleType="fitXY"
+            android:background="@null"
+            android:padding="5dip"
+            android:layout_width="wrap_content"
+            android:layout_height="90dip" />
+        <TextView android:text="Cupcake"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+    <TableRow>
+        <ImageButton android:id="@+id/imagebutton1"
+            android:src="@drawable/android_donut"
+            android:scaleType="fitXY"
+            android:background="@null"
+            android:padding="5dip"
+            android:layout_width="wrap_content"
+            android:layout_height="90dip" />
+        <TextView android:text="Donut"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+    <TableRow>
+        <ImageButton android:id="@+id/imagebutton2"
+            android:src="@drawable/android_eclair"
+            android:scaleType="fitXY"
+            android:background="@null"
+            android:padding="5dip"
+            android:layout_width="wrap_content"
+            android:layout_height="90dip" />
+        <TextView android:text="Eclair"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+    <TableRow>
+        <ImageButton android:id="@+id/imagebutton3"
+            android:src="@drawable/android_froyo"
+            android:scaleType="fitXY"
+            android:background="@null"
+            android:padding="5dip"
+            android:layout_width="wrap_content"
+            android:layout_height="90dip" />
+        <TextView android:text="FroYo"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+    <TableRow>
+        <ImageButton android:id="@+id/imagebutton4"
+            android:src="@drawable/android_gingerbread"
+            android:scaleType="fitXY"
+            android:background="@null"
+            android:padding="5dip"
+            android:layout_width="wrap_content"
+            android:layout_height="90dip" />
+        <TextView android:text="Gingerbread"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+</TableLayout>

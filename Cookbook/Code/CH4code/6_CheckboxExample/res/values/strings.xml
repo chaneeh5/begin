@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, LayoutWidgets!</string>
+    <string name="app_name">LayoutWidgets</string>
+    <string name="ocean_prompt">Choose your favorite ocean</string>
+</resources>

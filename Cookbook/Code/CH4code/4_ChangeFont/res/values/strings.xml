@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ChangeFont</string>
+    <string name="changed_text">Rainbow Connection</string>
+    <string name="button_text">Press To Change the Font Color</string>
+    <string name="first_text">First</string>
+    <string name="second_text">Second</string>
+    <string name="third_text">Third</string>
+</resources>

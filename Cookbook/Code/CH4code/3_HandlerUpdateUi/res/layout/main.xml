@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView android:id="@+id/computation_status"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/hello" android:textSize="36sp"
+		android:textColor="#000" />
+	<Button android:text="@string/action"
+		android:id="@+id/action" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+		
+		<ProgressBar android:id="@+id/ex_progress_bar" 
+            style="?android:attr/progressBarStyleHorizontal" 
+            android:layout_width="270px" 
+            android:layout_height="50px"
+            android:progress="0"
+            android:secondaryProgress="50" />
+</LinearLayout>
